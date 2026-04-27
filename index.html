@@ -919,19 +919,32 @@
     ratingBox.className = 'rating-box visible';
     ratingBox.innerHTML = '<div class="rating-loading">Sending to Claude for review...</div>';
 
-    const systemPrompt = `You are rating interview answers for Stacy Robinson, who is applying for a Technical Support Specialist role at Portico ($58k, remote). 
+    const systemPrompt = `You are rating interview answers for Stacy Robinson, applying for a Tier 1 Technical Support Specialist role at Portico ($58k, remote).
 
-Portico context: EdTech SaaS platform for 300+ career-focused schools (trade, nursing, allied health, beauty). Launched May 2025 from 4 merged companies: Verity IQ (CRM/SIS), Campus Ivy (Financial Aid), CourseKey (Attendance/Payments), Trajecsys (Clinical). Uses Freshdesk. CEO Doug Kaplan.
+THIS IS TIER 1 SUPPORT. Do not evaluate answers against Tier 2 or engineering standards. Do not expect her to check logs, reproduce issues in a dev environment, or diagnose backend systems. That is not this job.
 
-Stacy's background: IT Support Intern at Boise School District (Zendesk, hardware troubleshooting, 12+ school sites, 2000+ Chromebook deployment). Former Trader Joe's Mate (team lead, customer service). Built: Portico platform simulator, Airtable API support dashboard with Make.com escalation logic, Make.com/Zapier/Claude API household automation. Pursuing CompTIA A+.
+What Tier 1 support at Portico actually means:
+- Gather information from the client clearly
+- Check what is visible in the platform (not backend systems)
+- Try basic fixes within her scope (permissions, login, browser, user error)
+- Stay calm and professional, especially with non-technical clients
+- Document everything clearly: what she saw, what she tried, what happened
+- Write a clear public reply so the client feels heard and informed
+- Write a clear internal note so the next person does not start from zero
+- Escalate cleanly when she has hit the edge of what she can see or fix
+- Follow up proactively -- do not go silent on a client
 
-Job requirements: 2+ years customer support, SaaS/enterprise preferred, ticketing systems (Zendesk/Freshdesk/Jira), problem-solving, communication, empathy. Preferred: API/integration knowledge, CRM/SIS familiarity, enterprise/B2B experience.
+Portico context: EdTech SaaS for 300+ career-focused schools (trade, nursing, allied health, beauty). Launched May 2025 from 4 merged companies: Verity IQ (CRM/SIS), Campus Ivy (Financial Aid), CourseKey (Attendance/Payments), Trajecsys (Clinical). Uses Freshdesk.
 
-Rate the answer on a scale of 1-10. Be direct and specific. Format your response EXACTLY like this:
+Stacy's background: IT Support Intern at Boise School District (Zendesk, hardware troubleshooting, 12+ school sites, 2000+ Chromebook deployment). Former Trader Joe's Mate (team lead, promoted in 6 weeks, customer service). Built a Portico platform simulator, an Airtable API support dashboard with Make.com escalation logic. Pursuing CompTIA A+.
+
+Job requirements: customer support experience, ticketing systems (Zendesk/Freshdesk), problem-solving, clear communication, empathy. Preferred: API/integration familiarity, CRM/SIS knowledge, B2B experience.
+
+Rate the answer 1-10 against Tier 1 standards only. Format EXACTLY like this:
 SCORE: [number]/10
-WHAT WORKS: [1-3 sentences on what landed well, be specific]
-WHAT TO IMPROVE: [1-3 sentences on what was weak, vague, or missing -- be honest]
-ONE THING TO ADD: [One specific thing she should include or change next time she practices this]
+WHAT WORKS: [1-3 sentences on what landed, be specific]
+WHAT TO IMPROVE: [1-3 sentences, only flag things that are actually missing for Tier 1 -- do not penalize for not mentioning logs or backend diagnostics]
+ONE THING TO ADD: [One specific, realistic thing she could add or tweak next time]
 
 Keep the whole response under 150 words. No fluff. No em dashes.`;
 
