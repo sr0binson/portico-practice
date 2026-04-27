@@ -58,6 +58,25 @@
     padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 500;
   }
 
+  .api-bar {
+    background: #0a1828; border-bottom: 1px solid rgba(201,168,76,0.2);
+    padding: 10px 32px; display: flex; align-items: center; gap: 12px;
+  }
+  .api-bar label { font-size: 12px; color: rgba(255,255,255,0.5); white-space: nowrap; }
+  .api-input {
+    flex: 1; max-width: 420px; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 6px; padding: 7px 12px; font-size: 13px; color: var(--white);
+    font-family: 'DM Mono', monospace; letter-spacing: 0.5px;
+  }
+  .api-input:focus { outline: none; border-color: var(--gold); }
+  .api-save-btn {
+    background: var(--gold); color: var(--navy); border: none; border-radius: 6px;
+    padding: 7px 16px; font-size: 12px; font-weight: 700; cursor: pointer;
+    font-family: 'DM Sans', sans-serif; white-space: nowrap;
+  }
+  .api-status { font-size: 12px; color: rgba(255,255,255,0.4); }
+  .api-status.saved { color: #4ade80; }
+
   .tab-bar {
     background: var(--blue); display: flex; padding: 0 32px;
     border-bottom: 1px solid rgba(201,168,76,0.3);
@@ -269,6 +288,13 @@
     </div>
   </div>
   <div class="header-badge">Stacy Robinson</div>
+</div>
+
+<div class="api-bar">
+  <label>Anthropic API Key</label>
+  <input class="api-input" type="password" id="api-key-input" placeholder="sk-ant-..." />
+  <button class="api-save-btn" onclick="saveApiKey()">Save</button>
+  <span class="api-status" id="api-status"></span>
 </div>
 
 <div class="tab-bar">
@@ -846,7 +872,37 @@
     chevron.classList.toggle('open');
   }
 
+  function saveApiKey() {
+    const key = document.getElementById('api-key-input').value.trim();
+    if (!key.startsWith('sk-ant-')) {
+      document.getElementById('api-status').textContent = 'That does not look right -- should start with sk-ant-';
+      document.getElementById('api-status').className = 'api-status';
+      return;
+    }
+    localStorage.setItem('portico_api_key', key);
+    document.getElementById('api-status').textContent = 'Saved';
+    document.getElementById('api-status').className = 'api-status saved';
+  }
+
+  function loadApiKey() {
+    const saved = localStorage.getItem('portico_api_key');
+    if (saved) {
+      document.getElementById('api-key-input').value = saved;
+      document.getElementById('api-status').textContent = 'Key loaded';
+      document.getElementById('api-status').className = 'api-status saved';
+    }
+  }
+
   async function rateAnswer(btn, question, interviewer, rubric) {
+    const apiKey = localStorage.getItem('portico_api_key') || document.getElementById('api-key-input').value.trim();
+
+    if (!apiKey || !apiKey.startsWith('sk-ant-')) {
+      const card = btn.parentElement;
+      const ratingBox = card.querySelector('.rating-box');
+      ratingBox.className = 'rating-box visible';
+      ratingBox.innerHTML = '<div class="rating-loading">Paste your Anthropic API key at the top and hit Save first.</div>';
+      return;
+    }
     const card = btn.parentElement;
     const textarea = card.querySelector('.answer-textarea');
     const ratingBox = card.querySelector('.rating-box');
@@ -888,7 +944,12 @@ Stacy's answer: ${answer}`;
     try {
       const response = await fetch('https://api.anthropic.com/v1/messages', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: {
+          'Content-Type': 'application/json',
+          'x-api-key': apiKey,
+          'anthropic-version': '2023-06-01',
+          'anthropic-dangerous-direct-browser-access': 'true'
+        },
         body: JSON.stringify({
           model: 'claude-sonnet-4-20250514',
           max_tokens: 1000,
@@ -1380,6 +1441,7 @@ Stacy's answer: ${answer}`;
   }
 
   renderQueue();
+  loadApiKey();
 </script>
 </body>
 </html>
