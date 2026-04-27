@@ -37,7 +37,6 @@
     min-height: 100vh;
   }
 
-  /* HEADER */
   .header {
     background: var(--navy);
     padding: 16px 32px;
@@ -46,124 +45,46 @@
     justify-content: space-between;
     border-bottom: 2px solid var(--gold);
   }
-  .header-brand {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
+  .header-brand { display: flex; align-items: center; gap: 12px; }
   .header-logo {
-    width: 36px;
-    height: 36px;
-    background: var(--gold);
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 700;
-    color: var(--navy);
-    font-size: 16px;
+    width: 36px; height: 36px; background: var(--gold); border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; color: var(--navy); font-size: 16px;
   }
-  .header-title {
-    color: var(--white);
-    font-size: 18px;
-    font-weight: 600;
-    letter-spacing: -0.3px;
-  }
-  .header-sub {
-    color: var(--gold);
-    font-size: 12px;
-    font-weight: 500;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-  }
+  .header-title { color: var(--white); font-size: 18px; font-weight: 600; letter-spacing: -0.3px; }
+  .header-sub { color: var(--gold); font-size: 12px; font-weight: 500; letter-spacing: 0.5px; text-transform: uppercase; }
   .header-badge {
-    background: rgba(201,168,76,0.15);
-    border: 1px solid var(--gold);
-    color: var(--gold);
-    padding: 4px 12px;
-    border-radius: 20px;
-    font-size: 12px;
-    font-weight: 500;
+    background: rgba(201,168,76,0.15); border: 1px solid var(--gold); color: var(--gold);
+    padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 500;
   }
 
-  /* TABS */
   .tab-bar {
-    background: var(--blue);
-    display: flex;
-    gap: 0;
-    padding: 0 32px;
+    background: var(--blue); display: flex; padding: 0 32px;
     border-bottom: 1px solid rgba(201,168,76,0.3);
   }
   .tab-btn {
-    background: none;
-    border: none;
-    color: rgba(255,255,255,0.5);
-    padding: 14px 20px;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 13px;
-    font-weight: 500;
-    cursor: pointer;
-    border-bottom: 3px solid transparent;
-    transition: all 0.2s;
-    white-space: nowrap;
+    background: none; border: none; color: rgba(255,255,255,0.5);
+    padding: 14px 20px; font-family: 'DM Sans', sans-serif; font-size: 13px;
+    font-weight: 500; cursor: pointer; border-bottom: 3px solid transparent;
+    transition: all 0.2s; white-space: nowrap;
   }
   .tab-btn:hover { color: rgba(255,255,255,0.8); }
-  .tab-btn.active {
-    color: var(--gold);
-    border-bottom-color: var(--gold);
-  }
+  .tab-btn.active { color: var(--gold); border-bottom-color: var(--gold); }
 
-  /* MAIN */
-  .main {
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 32px 24px;
-  }
-
+  .main { max-width: 960px; margin: 0 auto; padding: 32px 24px; }
   .tab-content { display: none; }
   .tab-content.active { display: block; }
 
-  /* SECTION HEADERS */
-  .section-title {
-    font-size: 22px;
-    font-weight: 700;
-    color: var(--white);
-    margin-bottom: 4px;
-  }
-  .section-sub {
-    font-size: 14px;
-    color: rgba(255,255,255,0.55);
-    margin-bottom: 24px;
-  }
+  .section-title { font-size: 22px; font-weight: 700; color: var(--white); margin-bottom: 4px; }
+  .section-sub { font-size: 14px; color: rgba(255,255,255,0.55); margin-bottom: 24px; }
 
-  /* CARDS */
-  .card {
-    background: var(--white);
-    border-radius: 12px;
-    padding: 24px;
-    margin-bottom: 16px;
-  }
-  .card-title {
-    font-size: 15px;
-    font-weight: 700;
-    color: var(--navy);
-    margin-bottom: 8px;
-  }
-  .card-body {
-    font-size: 14px;
-    color: var(--gray-600);
-    line-height: 1.6;
-  }
+  .card { background: var(--white); border-radius: 12px; padding: 24px; margin-bottom: 16px; }
+  .card-title { font-size: 15px; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+  .card-body { font-size: 14px; color: var(--gray-600); line-height: 1.6; }
 
-  /* MODULE BADGES */
   .badge {
-    display: inline-block;
-    padding: 3px 10px;
-    border-radius: 12px;
-    font-size: 11px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.4px;
+    display: inline-block; padding: 3px 10px; border-radius: 12px;
+    font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.4px;
   }
   .badge-crm { background: #e8f0fe; color: #1a56db; }
   .badge-sis { background: #f0fdf4; color: #166534; }
@@ -172,233 +93,73 @@
   .badge-trajecsys { background: #fff1f2; color: #9f1239; }
   .badge-docs { background: #f0f9ff; color: #0369a1; }
 
-  /* TROUBLESHOOT TAB */
-  .module-section {
-    background: var(--white);
-    border-radius: 12px;
-    margin-bottom: 16px;
-    overflow: hidden;
-  }
+  .module-section { background: var(--white); border-radius: 12px; margin-bottom: 16px; overflow: hidden; }
   .module-header {
-    padding: 16px 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    cursor: pointer;
-    user-select: none;
+    padding: 16px 20px; display: flex; align-items: center;
+    justify-content: space-between; cursor: pointer; user-select: none;
   }
   .module-header:hover { background: var(--gray-100); }
-  .module-header-left {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-  .module-header h3 {
-    font-size: 15px;
-    font-weight: 700;
-    color: var(--navy);
-  }
-  .module-header p {
-    font-size: 12px;
-    color: var(--gray-400);
-    margin-top: 2px;
-  }
-  .chevron {
-    color: var(--gray-400);
-    font-size: 18px;
-    transition: transform 0.2s;
-  }
-  .module-body {
-    display: none;
-    padding: 0 20px 20px;
-    border-top: 1px solid var(--gray-200);
-  }
+  .module-header-left { display: flex; align-items: center; gap: 12px; }
+  .module-header h3 { font-size: 15px; font-weight: 700; color: var(--navy); }
+  .module-header p { font-size: 12px; color: var(--gray-400); margin-top: 2px; }
+  .chevron { color: var(--gray-400); font-size: 18px; transition: transform 0.2s; }
+  .module-body { display: none; padding: 0 20px 20px; border-top: 1px solid var(--gray-200); }
   .module-body.open { display: block; }
   .chevron.open { transform: rotate(180deg); }
 
-  .trouble-step {
-    background: var(--gray-100);
-    border-radius: 8px;
-    padding: 14px 16px;
-    margin-top: 12px;
-  }
-  .trouble-step-num {
-    font-size: 11px;
-    font-weight: 700;
-    color: var(--gold);
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    margin-bottom: 4px;
-  }
-  .trouble-step-title {
-    font-size: 14px;
-    font-weight: 600;
-    color: var(--navy);
-    margin-bottom: 4px;
-  }
-  .trouble-step-body {
-    font-size: 13px;
-    color: var(--gray-600);
-    line-height: 1.5;
-  }
-  .error-row {
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
-    padding: 10px 0;
-    border-bottom: 1px solid var(--gray-200);
-  }
+  .trouble-step { background: var(--gray-100); border-radius: 8px; padding: 14px 16px; margin-top: 12px; }
+  .trouble-step-num { font-size: 11px; font-weight: 700; color: var(--gold); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
+  .trouble-step-title { font-size: 14px; font-weight: 600; color: var(--navy); margin-bottom: 4px; }
+  .trouble-step-body { font-size: 13px; color: var(--gray-600); line-height: 1.5; }
+
+  .error-row { display: flex; align-items: flex-start; gap: 10px; padding: 10px 0; border-bottom: 1px solid var(--gray-200); }
   .error-row:last-child { border-bottom: none; }
   .error-code {
-    font-family: 'DM Mono', monospace;
-    font-size: 12px;
-    font-weight: 500;
-    background: var(--navy);
-    color: var(--gold);
-    padding: 3px 8px;
-    border-radius: 4px;
-    white-space: nowrap;
+    font-family: 'DM Mono', monospace; font-size: 12px; font-weight: 500;
+    background: var(--navy); color: var(--gold); padding: 3px 8px; border-radius: 4px; white-space: nowrap;
   }
-  .error-desc {
-    font-size: 13px;
-    color: var(--gray-600);
-    line-height: 1.5;
-  }
+  .error-desc { font-size: 13px; color: var(--gray-600); line-height: 1.5; }
 
-  /* TICKET PRACTICE */
-  .ticket-queue {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    margin-bottom: 24px;
-  }
+  .ticket-queue { display: flex; flex-direction: column; gap: 12px; margin-bottom: 24px; }
   .ticket-card {
-    background: var(--white);
-    border-radius: 12px;
-    padding: 18px 20px;
-    cursor: pointer;
-    border: 2px solid transparent;
-    transition: all 0.2s;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    background: var(--white); border-radius: 12px; padding: 18px 20px; cursor: pointer;
+    border: 2px solid transparent; transition: all 0.2s; display: flex; align-items: center; justify-content: space-between;
   }
   .ticket-card:hover { border-color: var(--gold); transform: translateX(4px); }
   .ticket-card.completed { opacity: 0.6; }
   .ticket-left { display: flex; flex-direction: column; gap: 6px; }
-  .ticket-id {
-    font-family: 'DM Mono', monospace;
-    font-size: 11px;
-    color: var(--gray-400);
-  }
-  .ticket-subject {
-    font-size: 15px;
-    font-weight: 600;
-    color: var(--navy);
-  }
-  .ticket-meta {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    flex-wrap: wrap;
-  }
-  .sla-pill {
-    font-size: 11px;
-    font-weight: 600;
-    padding: 3px 10px;
-    border-radius: 10px;
-  }
+  .ticket-id { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--gray-400); }
+  .ticket-subject { font-size: 15px; font-weight: 600; color: var(--navy); }
+  .ticket-meta { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .sla-pill { font-size: 11px; font-weight: 600; padding: 3px 10px; border-radius: 10px; }
   .sla-green { background: var(--green-light); color: var(--green); }
   .sla-yellow { background: var(--yellow-light); color: var(--yellow); }
   .sla-red { background: var(--red-light); color: var(--red); }
   .ticket-right { font-size: 20px; color: var(--gray-400); }
   .completed-check { color: var(--green); font-size: 20px; }
 
-  /* TICKET PRACTICE PANEL */
   .practice-panel { display: none; }
   .practice-panel.open { display: block; }
 
-  .panel-header {
-    background: var(--white);
-    border-radius: 12px;
-    padding: 20px 24px;
-    margin-bottom: 16px;
-  }
-  .panel-back {
-    font-size: 13px;
-    color: var(--gold);
-    cursor: pointer;
-    margin-bottom: 12px;
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-  }
+  .panel-header { background: var(--white); border-radius: 12px; padding: 20px 24px; margin-bottom: 16px; }
+  .panel-back { font-size: 13px; color: var(--gold); cursor: pointer; margin-bottom: 12px; display: inline-flex; align-items: center; gap: 6px; }
   .panel-back:hover { text-decoration: underline; }
-  .panel-ticket-id {
-    font-family: 'DM Mono', monospace;
-    font-size: 12px;
-    color: var(--gray-400);
-    margin-bottom: 6px;
-  }
-  .panel-subject {
-    font-size: 20px;
-    font-weight: 700;
-    color: var(--navy);
-    margin-bottom: 12px;
-  }
-  .panel-from {
-    font-size: 13px;
-    color: var(--gray-600);
-    margin-bottom: 16px;
-  }
+  .panel-ticket-id { font-family: 'DM Mono', monospace; font-size: 12px; color: var(--gray-400); margin-bottom: 6px; }
+  .panel-subject { font-size: 20px; font-weight: 700; color: var(--navy); margin-bottom: 12px; }
+  .panel-from { font-size: 13px; color: var(--gray-600); margin-bottom: 16px; }
   .panel-message {
-    background: var(--gray-100);
-    border-radius: 8px;
-    padding: 16px;
-    font-size: 14px;
-    color: var(--gray-600);
-    line-height: 1.6;
-    border-left: 4px solid var(--gold);
+    background: var(--gray-100); border-radius: 8px; padding: 16px;
+    font-size: 14px; color: var(--gray-600); line-height: 1.6; border-left: 4px solid var(--gold);
   }
 
-  .step-container {
-    background: var(--white);
-    border-radius: 12px;
-    padding: 24px;
-    margin-bottom: 16px;
-  }
-  .step-label {
-    font-size: 11px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    color: var(--gold);
-    margin-bottom: 8px;
-  }
-  .step-question {
-    font-size: 16px;
-    font-weight: 600;
-    color: var(--navy);
-    margin-bottom: 20px;
-    line-height: 1.4;
-  }
-  .step-options {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
+  .step-container { background: var(--white); border-radius: 12px; padding: 24px; margin-bottom: 16px; }
+  .step-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--gold); margin-bottom: 8px; }
+  .step-question { font-size: 16px; font-weight: 600; color: var(--navy); margin-bottom: 20px; line-height: 1.4; }
+  .step-options { display: flex; flex-direction: column; gap: 10px; }
   .step-option {
-    background: var(--gray-100);
-    border: 2px solid transparent;
-    border-radius: 10px;
-    padding: 14px 16px;
-    font-size: 14px;
-    color: var(--navy);
-    cursor: pointer;
-    transition: all 0.15s;
-    text-align: left;
-    font-family: 'DM Sans', sans-serif;
-    line-height: 1.4;
+    background: var(--gray-100); border: 2px solid transparent; border-radius: 10px;
+    padding: 14px 16px; font-size: 14px; color: var(--navy); cursor: pointer;
+    transition: all 0.15s; text-align: left; font-family: 'DM Sans', sans-serif; line-height: 1.4;
   }
   .step-option:hover { border-color: var(--gold); background: var(--cream); }
   .step-option.correct { background: var(--green-light); border-color: var(--green); color: var(--green); }
@@ -406,192 +167,69 @@
   .step-option.revealed { background: var(--green-light); border-color: var(--green); color: var(--green); }
   .step-option:disabled { cursor: default; }
 
-  .feedback-box {
-    border-radius: 10px;
-    padding: 16px;
-    margin-top: 16px;
-    font-size: 14px;
-    line-height: 1.6;
-    display: none;
-  }
+  .feedback-box { border-radius: 10px; padding: 16px; margin-top: 16px; font-size: 14px; line-height: 1.6; display: none; }
   .feedback-box.correct { background: var(--green-light); color: var(--green); border: 1px solid #b7dfca; }
   .feedback-box.incorrect { background: var(--red-light); color: var(--red); border: 1px solid #f5c2be; }
   .feedback-title { font-weight: 700; margin-bottom: 4px; font-size: 15px; }
 
   .next-btn {
-    background: var(--gold);
-    color: var(--navy);
-    border: none;
-    border-radius: 8px;
-    padding: 12px 24px;
-    font-size: 14px;
-    font-weight: 700;
-    cursor: pointer;
-    margin-top: 16px;
-    font-family: 'DM Sans', sans-serif;
-    display: none;
-    transition: background 0.2s;
+    background: var(--gold); color: var(--navy); border: none; border-radius: 8px;
+    padding: 12px 24px; font-size: 14px; font-weight: 700; cursor: pointer;
+    margin-top: 16px; font-family: 'DM Sans', sans-serif; display: none; transition: background 0.2s;
   }
   .next-btn:hover { background: var(--gold-light); }
 
-  .score-box {
-    background: var(--white);
-    border-radius: 12px;
-    padding: 32px;
-    text-align: center;
-    display: none;
-  }
+  .score-box { background: var(--white); border-radius: 12px; padding: 32px; text-align: center; display: none; }
   .score-emoji { font-size: 48px; margin-bottom: 12px; }
   .score-num { font-size: 36px; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
   .score-label { font-size: 15px; color: var(--gray-600); margin-bottom: 24px; }
   .score-retry {
-    background: var(--navy);
-    color: var(--white);
-    border: none;
-    border-radius: 8px;
-    padding: 12px 24px;
-    font-size: 14px;
-    font-weight: 600;
-    cursor: pointer;
-    font-family: 'DM Sans', sans-serif;
+    background: var(--navy); color: var(--white); border: none; border-radius: 8px;
+    padding: 12px 24px; font-size: 14px; font-weight: 600; cursor: pointer; font-family: 'DM Sans', sans-serif;
   }
 
-  /* INTERVIEW TAB */
   .interview-section { margin-bottom: 32px; }
-  .interviewer-header {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    margin-bottom: 20px;
-  }
+  .interviewer-header { display: flex; align-items: center; gap: 14px; margin-bottom: 20px; }
   .interviewer-avatar {
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 700;
-    font-size: 18px;
-    color: var(--white);
-    flex-shrink: 0;
+    width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center;
+    justify-content: center; font-weight: 700; font-size: 18px; color: var(--white); flex-shrink: 0;
   }
   .avatar-j { background: var(--blue); }
   .avatar-t { background: #7c3aed; }
   .interviewer-name { font-size: 17px; font-weight: 700; color: var(--white); }
   .interviewer-role { font-size: 13px; color: rgba(255,255,255,0.55); }
 
-  .interview-card {
-    background: var(--white);
-    border-radius: 12px;
-    padding: 20px 24px;
-    margin-bottom: 12px;
-  }
-  .interview-q {
-    font-size: 15px;
-    font-weight: 600;
-    color: var(--navy);
-    margin-bottom: 12px;
-    line-height: 1.4;
-  }
-  .interview-why {
-    font-size: 12px;
-    color: var(--gray-400);
-    margin-bottom: 10px;
-    font-style: italic;
-  }
+  .interview-card { background: var(--white); border-radius: 12px; padding: 20px 24px; margin-bottom: 12px; }
+  .interview-q { font-size: 15px; font-weight: 600; color: var(--navy); margin-bottom: 12px; line-height: 1.4; }
+  .interview-why { font-size: 12px; color: var(--gray-400); margin-bottom: 10px; font-style: italic; }
   .reveal-btn {
-    background: none;
-    border: 1px solid var(--gray-200);
-    border-radius: 6px;
-    padding: 8px 14px;
-    font-size: 13px;
-    color: var(--gray-600);
-    cursor: pointer;
-    font-family: 'DM Sans', sans-serif;
-    transition: all 0.15s;
+    background: none; border: 1px solid var(--gray-200); border-radius: 6px;
+    padding: 8px 14px; font-size: 13px; color: var(--gray-600); cursor: pointer;
+    font-family: 'DM Sans', sans-serif; transition: all 0.15s;
   }
   .reveal-btn:hover { border-color: var(--gold); color: var(--navy); }
   .answer-box {
-    background: var(--gray-100);
-    border-radius: 8px;
-    padding: 14px 16px;
-    font-size: 14px;
-    color: var(--gray-600);
-    line-height: 1.6;
-    margin-top: 10px;
-    border-left: 3px solid var(--gold);
-    display: none;
+    background: var(--gray-100); border-radius: 8px; padding: 14px 16px;
+    font-size: 14px; color: var(--gray-600); line-height: 1.6; margin-top: 10px;
+    border-left: 3px solid var(--gold); display: none;
   }
   .answer-box.open { display: block; }
   .avoid-box {
-    background: var(--red-light);
-    border-radius: 6px;
-    padding: 10px 14px;
-    font-size: 13px;
-    color: var(--red);
-    margin-top: 8px;
-    line-height: 1.5;
+    background: var(--red-light); border-radius: 6px; padding: 10px 14px;
+    font-size: 13px; color: var(--red); margin-top: 8px; line-height: 1.5;
   }
 
-  /* WILDCARD TAB */
-  .wildcard-card {
-    background: var(--white);
-    border-radius: 12px;
-    padding: 20px 24px;
-    margin-bottom: 12px;
-  }
-  .wildcard-label {
-    font-size: 11px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    color: var(--orange);
-    margin-bottom: 6px;
-  }
-  .wildcard-q {
-    font-size: 15px;
-    font-weight: 600;
-    color: var(--navy);
-    margin-bottom: 10px;
-    line-height: 1.4;
-  }
-  .wildcard-tip {
-    font-size: 13px;
-    color: var(--gray-600);
-    line-height: 1.5;
-  }
+  .wildcard-card { background: var(--white); border-radius: 12px; padding: 20px 24px; margin-bottom: 12px; }
+  .wildcard-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--orange); margin-bottom: 6px; }
+  .wildcard-q { font-size: 15px; font-weight: 600; color: var(--navy); margin-bottom: 10px; line-height: 1.4; }
+  .wildcard-tip { font-size: 13px; color: var(--gray-600); line-height: 1.5; }
 
-  /* PROGRESS BAR */
-  .progress-bar-wrap {
-    background: rgba(255,255,255,0.1);
-    border-radius: 10px;
-    height: 6px;
-    margin-bottom: 24px;
-    overflow: hidden;
-  }
-  .progress-bar-fill {
-    background: var(--gold);
-    height: 100%;
-    border-radius: 10px;
-    transition: width 0.4s ease;
-  }
+  .progress-bar-wrap { background: rgba(255,255,255,0.1); border-radius: 10px; height: 6px; margin-bottom: 24px; overflow: hidden; }
+  .progress-bar-fill { background: var(--gold); height: 100%; border-radius: 10px; transition: width 0.4s ease; }
 
-  /* DIVIDERS */
-  .divider {
-    border: none;
-    border-top: 1px solid rgba(255,255,255,0.1);
-    margin: 24px 0;
-  }
+  .divider { border: none; border-top: 1px solid rgba(255,255,255,0.1); margin: 24px 0; }
 
-  /* HIGHLIGHT BOXES */
-  .info-box {
-    border-radius: 10px;
-    padding: 14px 16px;
-    font-size: 13px;
-    line-height: 1.6;
-    margin-bottom: 16px;
-  }
+  .info-box { border-radius: 10px; padding: 14px 16px; font-size: 13px; line-height: 1.6; margin-bottom: 16px; }
   .info-box.gold { background: rgba(201,168,76,0.15); border: 1px solid rgba(201,168,76,0.3); color: var(--gold-light); }
   .info-box.white { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12); color: rgba(255,255,255,0.75); }
 
@@ -620,18 +258,18 @@
   <button class="tab-btn" onclick="switchTab('wildcard')">Wildcard Prep</button>
 </div>
 
-<!-- ===== TAB 1: TROUBLESHOOT ===== -->
+<!-- TAB 1: TROUBLESHOOT -->
 <div class="tab-content active" id="tab-troubleshoot">
   <div class="main">
     <div class="section-title">Troubleshooting Reference</div>
-    <div class="section-sub">Learn the framework first. Every Portico ticket follows the same logic. Click each module to expand.</div>
+    <div class="section-sub">Tier 1 support: confirm what you can see, document it clearly, escalate what you can't fix. Click each module to expand.</div>
 
     <div class="info-box gold">
-      <strong>The universal first move:</strong> Ask yourself -- what system is involved? Then: is it a user error, a configuration issue, a sync problem, or a bug? Start there before you do anything else.
+      <strong>Your job as Tier 1:</strong> Confirm what you can see in the platform. If it looks wrong or you've hit your limit, document everything and escalate. You are not expected to fix backend systems or trigger syncs yourself.
     </div>
 
     <div class="info-box white">
-      <strong>How Portico's systems connect:</strong> Verity IQ (CRM/SIS) is the core. Campus Ivy (FA) pulls student records from it. CourseKey (Attendance/Payments) syncs with SIS. Trajecsys (Clinical) is separate but connected. If something breaks, it often breaks at a sync point between two systems.
+      <strong>How Portico's systems connect:</strong> Verity IQ (CRM/SIS) is the core. Campus Ivy (FA) pulls student records from it. CourseKey (Attendance/Payments) syncs with SIS. Trajecsys (Clinical) is separate but connected. If something breaks, it often breaks at a sync point between two systems -- that's Engineering territory.
     </div>
 
     <!-- MODULE: GENERAL FRAMEWORK -->
@@ -655,7 +293,7 @@
         <div class="trouble-step">
           <div class="trouble-step-num">Step 2</div>
           <div class="trouble-step-title">Identify who is affected</div>
-          <div class="trouble-step-body">Is this one user, one campus, one role, or all users? One person = likely a permissions/login issue or user error. Everyone = likely a sync failure, bug, or outage.</div>
+          <div class="trouble-step-body">Is this one user, one campus, one role, or all users? One person = likely a permissions or user error. Everyone = likely a sync failure, bug, or outage. Scope tells you urgency.</div>
         </div>
         <div class="trouble-step">
           <div class="trouble-step-num">Step 3</div>
@@ -664,13 +302,13 @@
         </div>
         <div class="trouble-step">
           <div class="trouble-step-num">Step 4</div>
-          <div class="trouble-step-title">Try the basic fixes first</div>
-          <div class="trouble-step-body">Log out and back in. Clear cache/cookies. Try a different browser. Confirm their role/permissions are correct in User Management. Check if data is missing in the upstream system (usually Verity Student for SIS issues).</div>
+          <div class="trouble-step-title">Try the basic checks first</div>
+          <div class="trouble-step-body">Log out and back in. Clear cache/cookies. Try a different browser. Confirm their role and permissions look correct. Check if the student or record exists in the upstream system (usually Verity Student). These are things you can see and verify yourself.</div>
         </div>
         <div class="trouble-step">
           <div class="trouble-step-num">Step 5</div>
           <div class="trouble-step-title">Document and escalate if needed</div>
-          <div class="trouble-step-body">If basic steps don't fix it: document what you tried, what the error was, which system, how many users affected, and whether it's SLA-sensitive. Escalate to Engineering with full context -- never escalate a half-described ticket.</div>
+          <div class="trouble-step-body">If basic checks don't resolve it: write down what you confirmed, what the error was, which system, how many users affected, and whether it's SLA-sensitive. Escalate to Engineering with full context. A half-described ticket wastes everyone's time.</div>
         </div>
       </div>
     </div>
@@ -705,20 +343,20 @@
           </div>
         </div>
         <div class="trouble-step">
-          <div class="trouble-step-num">How to troubleshoot</div>
+          <div class="trouble-step-num">What you can check</div>
           <div class="trouble-step-body">
-            <strong>Lead not updating:</strong> Confirm the rep saved the activity log. Check if their role has edit permissions. Try refreshing after a few minutes -- some updates are near-real-time not instant.<br><br>
-            <strong>Duplicate record:</strong> This is usually a data entry issue. Confirm which is the correct record (most recent activity). Flag for admin to merge -- don't delete.<br><br>
-            <strong>Can't see leads:</strong> Check their user role and territory/assignment settings. This is almost always a permissions issue.<br><br>
-            <strong>Analytics wrong:</strong> Confirm the date range filter. Some reports pull from Verity Student (SIS) -- if data is missing there, it won't show here.
+            <strong>Lead not updating:</strong> Confirm the rep saved the activity log. Check if their role has edit permissions in User Management. Try refreshing -- some updates are near-real-time, not instant.<br><br>
+            <strong>Duplicate record:</strong> Confirm which is the correct record (usually most recent activity). Flag for admin to merge -- don't delete anything yourself.<br><br>
+            <strong>Can't see leads:</strong> Check their user role and assignment settings. This is almost always a permissions issue you can identify and escalate.<br><br>
+            <strong>Analytics wrong:</strong> Confirm the date range filter. If data looks missing entirely, note it and escalate -- don't try to diagnose the data source yourself.
           </div>
         </div>
         <div class="trouble-step">
           <div class="trouble-step-num">Error codes for this module</div>
           <div class="trouble-step-body">
-            <div class="error-row"><span class="error-code">401</span><span class="error-desc">Session expired or wrong permissions. Have them log out and back in. If it persists, check their role in User Management.</span></div>
-            <div class="error-row"><span class="error-code">404</span><span class="error-desc">Record not found. The lead may have been deleted or they're searching with the wrong ID.</span></div>
-            <div class="error-row"><span class="error-code">422</span><span class="error-desc">Form validation error. A required field is missing or formatted wrong. Walk them through the required fields.</span></div>
+            <div class="error-row"><span class="error-code">401</span><span class="error-desc">Session expired or wrong permissions. Have them log out and back in. If it persists, check their role in User Management and escalate if the role looks correct but the error continues.</span></div>
+            <div class="error-row"><span class="error-code">404</span><span class="error-desc">Record not found. The lead may have been deleted or they're searching with the wrong ID. Confirm the ID and escalate if the record should exist.</span></div>
+            <div class="error-row"><span class="error-code">422</span><span class="error-desc">Form validation error. A required field is missing or formatted wrong. Walk them through the required fields -- this one you can usually resolve without escalating.</span></div>
           </div>
         </div>
       </div>
@@ -739,7 +377,7 @@
       <div class="module-body">
         <div class="trouble-step">
           <div class="trouble-step-num">What this module does</div>
-          <div class="trouble-step-body">The central student database. Registrars use it. Stores enrollment status, grades, clock hours, academic records, and program information. Other modules (FA, CourseKey) pull from here -- if Verity Student has bad data, everything downstream will too.</div>
+          <div class="trouble-step-body">The central student database. Registrars use it. Stores enrollment status, grades, clock hours, academic records, and program info. Other modules (FA, CourseKey) pull from here -- if Verity Student has bad data, everything downstream will too.</div>
         </div>
         <div class="trouble-step">
           <div class="trouble-step-num">Common issues you'll see</div>
@@ -754,19 +392,19 @@
           </div>
         </div>
         <div class="trouble-step">
-          <div class="trouble-step-num">How to troubleshoot</div>
+          <div class="trouble-step-num">What you can check</div>
           <div class="trouble-step-body">
-            <strong>Student missing in another module:</strong> Always check Verity Student first. If they're not active and correctly enrolled here, they won't appear anywhere else. This is the source of truth.<br><br>
-            <strong>Grade/hours wrong:</strong> Confirm the data was entered (not just saved in draft). Check if CourseKey sync has occurred -- attendance hours flow from CourseKey into SIS.<br><br>
-            <strong>Transcript won't generate:</strong> Usually missing required data (incomplete record, missing dates, or SAP hold). Ask what error appears. Check for a financial hold in Campus Ivy -- FA holds can block transcripts.
+            <strong>Student missing in another module:</strong> Always check Verity Student first. Confirm they're active and correctly enrolled. This is the source of truth -- if it's wrong here, that's what you document and escalate.<br><br>
+            <strong>Grade/hours wrong:</strong> Confirm the data was entered (not saved as draft). Note whether it's a manual entry issue or a sync issue. Sync issues get escalated.<br><br>
+            <strong>Transcript won't generate:</strong> Look at the record for anything obviously incomplete -- missing dates, missing status. Also check Campus Ivy for a financial hold. Document what you find and escalate if you can't identify a clear data gap.
           </div>
         </div>
         <div class="trouble-step">
           <div class="trouble-step-num">Error codes for this module</div>
           <div class="trouble-step-body">
-            <div class="error-row"><span class="error-code">500</span><span class="error-desc">Server error on their end. Document it, check if others are affected. If widespread, escalate to Engineering as a potential outage.</span></div>
-            <div class="error-row"><span class="error-code">422</span><span class="error-desc">Data validation failed. A required field is missing in the student record -- usually program, start date, or enrollment status.</span></div>
-            <div class="error-row"><span class="error-code">Sync error</span><span class="error-desc">CourseKey data didn't push to SIS. Check if the sync job ran. If not, it may need to be triggered manually by Engineering.</span></div>
+            <div class="error-row"><span class="error-code">500</span><span class="error-desc">Server error. Document it and check if others are affected. If multiple users at the same school are seeing it, escalate to Engineering as a potential outage.</span></div>
+            <div class="error-row"><span class="error-code">422</span><span class="error-desc">Data validation failed. A required field is missing in the student record -- usually program, start date, or enrollment status. You can identify the gap; the school admin makes the fix.</span></div>
+            <div class="error-row"><span class="error-code">Sync error</span><span class="error-desc">CourseKey data didn't push to SIS. Document when it was last working and how many students are affected, then escalate to Engineering -- restarting sync jobs is not a Tier 1 action.</span></div>
           </div>
         </div>
       </div>
@@ -787,11 +425,11 @@
       <div class="module-body">
         <div class="trouble-step">
           <div class="trouble-step-num">What this module does</div>
-          <div class="trouble-step-body">Manages all federal financial aid for students. FA Directors use it. Handles FAFSA processing, aid packaging, disbursements, Satisfactory Academic Progress (SAP) checks, and reporting to COD (Common Origination and Disbursement) and NSLDS.</div>
+          <div class="trouble-step-body">Manages federal financial aid for students. FA Directors use it. Handles FAFSA processing, aid packaging, disbursements, SAP checks, and reporting to federal systems.</div>
         </div>
         <div class="trouble-step">
           <div class="trouble-step-num">Why FA tickets are high priority</div>
-          <div class="trouble-step-body">Financial aid issues directly affect students' ability to stay enrolled. A disbursement error or SAP hold can mean a student can't pay tuition. These are almost always urgent -- treat them as high priority and loop in the FA Director if you're unsure.</div>
+          <div class="trouble-step-body">Financial aid issues directly affect whether students can stay enrolled. A blocked disbursement or SAP hold can mean a student can't pay tuition. Treat these as urgent and escalate faster than other ticket types.</div>
         </div>
         <div class="trouble-step">
           <div class="trouble-step-num">Common issues you'll see</div>
@@ -801,27 +439,26 @@
               <li>Disbursement not processing</li>
               <li>SAP hold incorrectly applied</li>
               <li>ISIR data not importing from FAFSA</li>
-              <li>COD or NSLDS reporting error</li>
               <li>Workflow item stuck (red column in Campus Ivy dashboard)</li>
             </ul>
           </div>
         </div>
         <div class="trouble-step">
-          <div class="trouble-step-num">How to troubleshoot</div>
+          <div class="trouble-step-num">What you can check</div>
           <div class="trouble-step-body">
-            <strong>Aid not showing:</strong> Check if the student's ISIR was imported. If no ISIR = no aid package. Also confirm enrollment status in Verity Student -- aid requires active enrollment.<br><br>
-            <strong>Disbursement not processing:</strong> Check the workflow dashboard for red/stuck items. Check for a SAP hold or enrollment status issue. Disbursements also require the correct credit balance -- confirm with FA Director.<br><br>
-            <strong>ISIR not importing:</strong> This is usually a COD/federal connection issue. Document the student ID, what was submitted, and escalate to Engineering -- don't try to manually fix federal data.<br><br>
-            <strong>SAP hold wrong:</strong> Confirm the student's actual hours and GPA meet the program's SAP requirements. If the hold looks like an error, flag for FA Director to review -- never manually remove an SAP hold without approval.
+            <strong>Aid not showing:</strong> Check if the student is active in Verity Student. If enrollment looks fine, document it and escalate -- you're not diagnosing federal aid processing yourself.<br><br>
+            <strong>Disbursement stuck:</strong> Note whether it's showing red in the workflow dashboard. Document the student IDs and escalate with urgency flag. Do not try to manually clear or re-submit disbursements.<br><br>
+            <strong>SAP hold:</strong> Note it exists and flag for the FA Director to review -- never remove a hold yourself, even if it looks wrong.<br><br>
+            <strong>ISIR not importing:</strong> This is a federal data connection issue. Document and escalate immediately -- don't touch federal data.
           </div>
         </div>
         <div class="trouble-step">
           <div class="trouble-step-num">Key terms to know</div>
           <div class="trouble-step-body">
-            <div class="error-row"><span class="error-code">ISIR</span><span class="error-desc">Institutional Student Information Record -- the processed FAFSA data. Must be imported before aid can be packaged.</span></div>
-            <div class="error-row"><span class="error-code">SAP</span><span class="error-desc">Satisfactory Academic Progress. Students must meet GPA/completion rate thresholds to keep aid. A hold here blocks disbursement.</span></div>
-            <div class="error-row"><span class="error-code">COD</span><span class="error-desc">Common Origination and Disbursement -- the federal system schools report disbursements to. Errors here are serious.</span></div>
-            <div class="error-row"><span class="error-code">R2T4</span><span class="error-desc">Return to Title IV. When a student withdraws, the school may owe money back to the federal government. Campus Ivy calculates this.</span></div>
+            <div class="error-row"><span class="error-code">ISIR</span><span class="error-desc">Institutional Student Information Record -- processed FAFSA data. Must be imported before aid can be packaged.</span></div>
+            <div class="error-row"><span class="error-code">SAP</span><span class="error-desc">Satisfactory Academic Progress. Students must meet GPA/completion thresholds to keep aid. A hold blocks disbursement.</span></div>
+            <div class="error-row"><span class="error-code">COD</span><span class="error-desc">Common Origination and Disbursement -- the federal system schools report to. Errors here are escalated immediately.</span></div>
+            <div class="error-row"><span class="error-code">R2T4</span><span class="error-desc">Return to Title IV. When a student withdraws, the school may owe money back to the federal government.</span></div>
             <div class="error-row"><span class="error-code">Title IV</span><span class="error-desc">Federal student aid programs (Pell, subsidized/unsubsidized loans). Trade schools are heavily dependent on this.</span></div>
           </div>
         </div>
@@ -843,33 +480,33 @@
       <div class="module-body">
         <div class="trouble-step">
           <div class="trouble-step-num">What this module does</div>
-          <div class="trouble-step-body">Tracks student attendance by clock hours (not credits -- trade schools work in hours). Also tracks skills completion via checklists, handles payment processing, and feeds attendance data into Verity Student (SIS).</div>
+          <div class="trouble-step-body">Tracks student attendance by clock hours (trade schools work in hours, not credits). Also tracks skills completion via checklists, handles payment processing, and feeds attendance data into Verity Student.</div>
         </div>
         <div class="trouble-step">
           <div class="trouble-step-num">Common issues you'll see</div>
           <div class="trouble-step-body">
             <ul>
-              <li>Attendance hours not syncing to Verity Student</li>
+              <li>Attendance hours not showing up in Verity Student</li>
               <li>Student hours showing wrong total</li>
               <li>Skills checklist won't save or submit</li>
-              <li>Payment not processing or showing wrong balance</li>
+              <li>Student not appearing in CourseKey at all</li>
               <li>Student can't clock in (mobile app issue)</li>
             </ul>
           </div>
         </div>
         <div class="trouble-step">
-          <div class="trouble-step-num">How to troubleshoot</div>
+          <div class="trouble-step-num">What you can check</div>
           <div class="trouble-step-body">
-            <strong>Hours not syncing:</strong> This is the most common CourseKey issue. The sync between CourseKey and Verity Student runs on a schedule. Ask when it was last correct. If it's been more than a few hours, escalate as a sync failure.<br><br>
-            <strong>Wrong hours total:</strong> Check if any hours were entered manually vs. system-tracked. Also check the Sync/Async tabs -- Async hours are often reviewed separately.<br><br>
-            <strong>Student can't clock in:</strong> Check if they're enrolled in the correct program in CourseKey. Also check device/app permissions. Sometimes it's a mobile app update issue.
+            <strong>Student missing in CourseKey:</strong> Check Verity Student first. If they're active and enrolled there, the issue is a sync that hasn't run. Document and escalate -- you're not triggering the sync yourself.<br><br>
+            <strong>Hours not showing in SIS:</strong> Note when the problem started and how many students are affected. This is a sync issue between CourseKey and Verity Student. Escalate to Engineering with that context.<br><br>
+            <strong>Student can't clock in:</strong> Confirm they're enrolled in the correct program in CourseKey. Check if it's a device or app issue. If enrollment looks fine and the problem persists, escalate.
           </div>
         </div>
         <div class="trouble-step">
           <div class="trouble-step-num">Error codes for this module</div>
           <div class="trouble-step-body">
-            <div class="error-row"><span class="error-code">Webhook timeout</span><span class="error-desc">The sync from CourseKey to Verity Student failed mid-transfer. Hours may be stuck. Escalate to Engineering to re-trigger the webhook.</span></div>
-            <div class="error-row"><span class="error-code">422</span><span class="error-desc">Skills checklist submission failed -- usually a required field is blank or the student record is missing data in SIS.</span></div>
+            <div class="error-row"><span class="error-code">Webhook timeout</span><span class="error-desc">The sync from CourseKey to Verity Student failed. Hours may be stuck. Document the timing and affected students and escalate to Engineering -- webhook issues are not Tier 1 to fix.</span></div>
+            <div class="error-row"><span class="error-code">422</span><span class="error-desc">Skills checklist submission failed -- usually a required field is blank. Walk the user through required fields before escalating.</span></div>
           </div>
         </div>
       </div>
@@ -890,26 +527,25 @@
       <div class="module-body">
         <div class="trouble-step">
           <div class="trouble-step-num">What this module does</div>
-          <div class="trouble-step-body">Manages clinical rotations and externships for nursing and allied health programs. Tracks hours at clinical sites, preceptor assignments, skills performed in the field, and compliance documentation. Acquired by Portico late 2025.</div>
+          <div class="trouble-step-body">Manages clinical rotations and externships for nursing and allied health programs. Tracks hours at clinical sites, preceptor assignments, and compliance documentation. Acquired by Portico late 2025 -- it's the newest system in the platform.</div>
         </div>
         <div class="trouble-step">
           <div class="trouble-step-num">Common issues you'll see</div>
           <div class="trouble-step-body">
             <ul>
               <li>Clinical hours not showing in student record</li>
-              <li>Preceptor not assigned or can't access the student's file</li>
+              <li>Preceptor not assigned or can't access a student's file</li>
               <li>Compliance documents missing or not accepted</li>
               <li>Clinical coordinator can't see a student's site assignment</li>
-              <li>NCLEX prep tracking not updating</li>
             </ul>
           </div>
         </div>
         <div class="trouble-step">
-          <div class="trouble-step-num">How to troubleshoot</div>
+          <div class="trouble-step-num">What you can check</div>
           <div class="trouble-step-body">
-            <strong>Clinical hours not showing:</strong> Confirm the preceptor logged the hours (they enter them, not the student). Check that the student is assigned to the correct clinical site in Trajecsys.<br><br>
-            <strong>Preceptor access issue:</strong> Preceptors are external users -- their accounts are often set up differently. Confirm their login was created and they have the correct site access.<br><br>
-            <strong>This module is newer to Portico</strong> -- if you're unsure, it's okay to say you'll escalate to Engineering for anything beyond basic access issues.
+            <strong>Clinical hours not showing:</strong> Confirm preceptors are logging hours (they enter them, not students). If hours exist in Trajecsys but aren't reaching Verity Student, that's a cross-system sync issue -- escalate to Engineering.<br><br>
+            <strong>Preceptor access issue:</strong> Confirm their login was created and they have the correct site access. Preceptors are external users set up differently from school staff.<br><br>
+            <strong>When in doubt:</strong> Trajecsys is the newest acquisition. If you're unsure, document what you can confirm and escalate. That's the right call.
           </div>
         </div>
       </div>
@@ -934,9 +570,9 @@
             <ul>
               <li>A 500 error is happening for multiple users at the same school</li>
               <li>A disbursement or financial aid action is blocked and time-sensitive</li>
-              <li>A sync/webhook failure means attendance hours are not reaching SIS</li>
-              <li>A student's federal data (COD, NSLDS, ISIR) looks wrong</li>
-              <li>An SLA breach is 90% or higher on a high-priority ticket</li>
+              <li>Attendance hours are not reaching SIS and basic checks look fine</li>
+              <li>Anything involving federal financial data (COD, NSLDS, ISIR)</li>
+              <li>An SLA breach is at 90% or higher on a high-priority ticket</li>
             </ul>
           </div>
         </div>
@@ -944,17 +580,17 @@
           <div class="trouble-step-num">Handle yourself first if:</div>
           <div class="trouble-step-body">
             <ul>
-              <li>It's a login issue (most are 401 -- try logout/login, check role)</li>
-              <li>It's a "where is my record" question (search with correct ID)</li>
-              <li>It's a user who doesn't know how to use a feature (walkthrough)</li>
-              <li>It's a data entry mistake the admin can correct themselves</li>
+              <li>It's a login issue (try logout/login, check role -- most 401s resolve this way)</li>
+              <li>It's a "where is my record" question (search with the correct ID)</li>
+              <li>It's a user who doesn't know how to do something (walk them through it)</li>
+              <li>It's a missing field the school admin can fill in themselves</li>
             </ul>
           </div>
         </div>
         <div class="trouble-step">
           <div class="trouble-step-num">What to include in an escalation</div>
           <div class="trouble-step-body">
-            Ticket ID, school name, affected user(s), module, exact error message or code, steps already tried, number of users affected, SLA status, and whether it's affecting live student financial aid or enrollment.
+            Ticket ID, school name, affected user(s), module, exact error message or code, steps you already tried, number of users affected, SLA status, and whether it's affecting live student enrollment or financial aid. The more context you give Engineering, the faster they can move.
           </div>
         </div>
       </div>
@@ -963,7 +599,7 @@
   </div>
 </div>
 
-<!-- ===== TAB 2: TICKET PRACTICE ===== -->
+<!-- TAB 2: TICKET PRACTICE -->
 <div class="tab-content" id="tab-tickets">
   <div class="main">
     <div class="section-title">Ticket Practice</div>
@@ -986,7 +622,7 @@
   </div>
 </div>
 
-<!-- ===== TAB 3: INTERVIEW ===== -->
+<!-- TAB 3: INTERVIEW -->
 <div class="tab-content" id="tab-interview">
   <div class="main">
     <div class="section-title">Interview Drill</div>
@@ -997,49 +633,58 @@
         <div class="interviewer-avatar avatar-j">J</div>
         <div>
           <div class="interviewer-name">Joshua</div>
-          <div class="interviewer-role">Senior Support Analyst -- will test your technical knowledge and support process</div>
+          <div class="interviewer-role">Senior Support Analyst -- will ask about how you think through problems, not Portico knowledge you couldn't have yet</div>
         </div>
       </div>
 
       <div class="interview-card">
-        <div class="interview-q">Walk me through how you'd handle a ticket where a school says their student's financial aid isn't showing up.</div>
-        <div class="interview-why">Why they ask: Tests your FA knowledge and whether you know the right order of operations.</div>
+        <div class="interview-q">Walk me through how you approach a problem you've never seen before.</div>
+        <div class="interview-why">Why he asks: He wants to know your process. Not your Portico knowledge -- your instincts.</div>
         <button class="reveal-btn" onclick="toggleAnswer(this)">Show suggested answer</button>
-        <div class="answer-box">First I'd confirm which module they're in -- Campus Ivy Core. Then I'd check if the student's ISIR was imported, because without that, aid can't be packaged at all. I'd also verify the student is active and correctly enrolled in Verity Student, since Campus Ivy pulls from there. If both look correct, I'd check the Campus Ivy workflow dashboard for any stuck or red items. If something's blocked and it's affecting a disbursement, I'd escalate to Engineering with the full context and flag it as time-sensitive.</div>
-        <div class="avoid-box" style="display:none">Avoid: Jumping to "I'd escalate it" without showing the diagnostic steps first. Joshua wants to see that you don't just pass things off.</div>
+        <div class="answer-box">I start by figuring out what I actually know vs. what I'm assuming. At Boise, when I hit a device issue I hadn't seen, I'd confirm the symptoms first -- what's happening, what's not happening, who else is affected. Then I'd work through the basics before I escalated: is it the device, the user, the network, the software? I document as I go so if it does go up to someone else, they're not starting from zero. I don't guess and I don't freeze -- I just keep narrowing it down.</div>
+        <div class="avoid-box" style="display:none">Avoid: Saying you'd Google it or just escalate right away. Show that you have a process before you hand it off.</div>
       </div>
 
       <div class="interview-card">
-        <div class="interview-q">A school calls and says their attendance hours aren't syncing to student records. What do you do?</div>
-        <div class="interview-why">Why they ask: Tests CourseKey + SIS integration knowledge -- this is a very common Portico issue.</div>
+        <div class="interview-q">Tell me about a time you had to figure something out with no documentation or training.</div>
+        <div class="interview-why">Why he asks: Portico is a newer merged platform. You will hit undocumented situations. He wants to know you won't freeze.</div>
         <button class="reveal-btn" onclick="toggleAnswer(this)">Show suggested answer</button>
-        <div class="answer-box">I'd confirm they're looking at CourseKey for attendance and Verity Student for the record -- those are two different systems and the sync runs on a schedule. I'd ask when they last saw it working correctly. If it's been more than a few hours since a sync should have run, that's likely a webhook failure between CourseKey and SIS. I'd document the details -- school name, how many students affected, time range -- and escalate to Engineering to re-trigger the sync job. I'd follow up with the school once I have an ETA from the team.</div>
-        <div class="avoid-box" style="display:none">Avoid: Telling them to just wait or refresh. That's not enough for a sync failure.</div>
+        <div class="answer-box">When I built the support dashboard for my portfolio, I was working with the Airtable API and Make.com to build escalation logic from scratch -- there wasn't a guide for exactly what I was trying to do. I had to read the API docs, test small pieces, and work backward from the errors I got. That approach -- isolate the variable, test one thing at a time, read the error carefully -- is how I'd work through an unfamiliar support issue too.</div>
+        <div class="avoid-box" style="display:none">Avoid: A vague story. Name the actual thing you figured out and how you got there.</div>
       </div>
 
       <div class="interview-card">
-        <div class="interview-q">What's the difference between a 401 error and a 500 error, and how would you handle each?</div>
-        <div class="interview-why">Why they ask: Basic technical competency check -- every support role needs this.</div>
+        <div class="interview-q">What's the difference between a 401 error and a 500 error?</div>
+        <div class="interview-why">Why he asks: Basic technical competency check. This is general IT knowledge, not Portico-specific.</div>
         <button class="reveal-btn" onclick="toggleAnswer(this)">Show suggested answer</button>
-        <div class="answer-box">A 401 is an authorization error -- the user doesn't have permission or their session expired. I'd start with logout and login, then check their role and permissions in User Management. A 500 is a server-side error that's not caused by the user -- something broke on the backend. One person getting a 500 might be a fluke, but if multiple people at the same school are seeing it, that's a potential outage and I'd escalate to Engineering immediately with as much detail as I have.</div>
-        <div class="avoid-box" style="display:none">Avoid: Saying both errors mean "something is broken." The distinction matters.</div>
+        <div class="answer-box">A 401 is an authorization error -- the user doesn't have permission or their session expired. I'd start with logout and back in, then check their role and permissions. A 500 is a server-side error that's not caused by the user -- something broke on the backend. One person getting a 500 might be a fluke, but if multiple people are seeing it at the same time, that's a potential outage and I'd escalate to Engineering right away with as much detail as I have.</div>
+        <div class="avoid-box" style="display:none">Avoid: Saying both mean "something is broken." The distinction matters and he's testing whether you know it.</div>
       </div>
 
       <div class="interview-card">
-        <div class="interview-q">Tell me about a time you had to figure something out on your own with limited documentation.</div>
-        <div class="interview-why">Why they ask: Portico is a newer, merged platform. You will hit undocumented situations. They want to know you won't freeze.</div>
+        <div class="interview-q">How do you decide when to escalate vs. keep troubleshooting yourself?</div>
+        <div class="interview-why">Why he asks: He wants to know you won't over-escalate (creates noise) or under-escalate (drops the ball).</div>
         <button class="reveal-btn" onclick="toggleAnswer(this)">Show suggested answer</button>
-        <div class="answer-box">When I built the Portico Support Dashboard for my portfolio, I was working with the Airtable API and Make.com to build escalation logic from scratch -- there wasn't a guide for exactly what I was trying to do. I had to read the API docs, test small pieces, and work backward from the errors I got. That approach -- isolate the variable, test one thing at a time, read the error carefully -- is how I'd work through a support issue with limited documentation too.</div>
-        <div class="avoid-box" style="display:none">Avoid: A vague story with no specifics. Name the actual thing you figured out and how.</div>
+        <div class="answer-box">I escalate when I've hit the edge of what I can actually see or fix. At Boise, my job was to confirm what I could verify -- is the device the problem, is it the user, is it the network -- and then hand it off clearly when it went beyond that. I wouldn't escalate something I could resolve with a permissions check or a browser refresh. But if I've done the basics and the problem is clearly in a system I don't have access to or authority over, I escalate fast with full notes so whoever picks it up doesn't have to start over.</div>
+        <div class="avoid-box" style="display:none">Avoid: "I'd always try to fix it myself first." That's not the right frame -- knowing your limits is part of the job.</div>
       </div>
 
       <div class="interview-card">
-        <div class="interview-q">How would you prioritize a queue with five open tickets when two of them are about to breach SLA?</div>
-        <div class="interview-why">Why they ask: SLA management is a core part of this role.</div>
+        <div class="interview-q">How do you handle a queue where two tickets are about to breach SLA and three others are waiting?</div>
+        <div class="interview-why">Why he asks: Prioritization under pressure is a real daily skill in this role.</div>
         <button class="reveal-btn" onclick="toggleAnswer(this)">Show suggested answer</button>
-        <div class="answer-box">I'd address the two SLA-breaching tickets first, starting with whichever has a higher impact -- for example, one involving financial aid or active student access would jump ahead of a reporting question. For the SLA tickets, my first goal is acknowledgment and triage, not full resolution -- even sending a quality first response buys time and keeps the customer informed. Then I'd work through the remaining three by priority and complexity, combining any that are the same issue if possible.</div>
-        <div class="avoid-box" style="display:none">Avoid: Just saying "first in first out." That's not how SLA-aware support works.</div>
+        <div class="answer-box">The SLA-breaching ones go first, starting with whichever has the higher impact -- something affecting a student's enrollment or financial aid beats a reporting question. For those tickets, my first goal is acknowledgment and triage, not full resolution -- even a quick quality response to let the client know I'm on it buys time and keeps them calm. Then I'd work through the remaining three by urgency and complexity, and combine any that look like the same underlying issue.</div>
+        <div class="avoid-box" style="display:none">Avoid: "First in, first out." That's not how SLA-aware support works.</div>
       </div>
+
+      <div class="interview-card">
+        <div class="interview-q">How do you document a ticket you're handing off to Engineering?</div>
+        <div class="interview-why">Why he asks: Bad handoffs waste Engineering's time. He wants to know you write clean escalations.</div>
+        <button class="reveal-btn" onclick="toggleAnswer(this)">Show suggested answer</button>
+        <div class="answer-box">I'd include: the ticket ID, the school and user affected, the module, exactly what error they saw (word for word if possible), what I already tried, how many people are affected, and whether there's any time sensitivity -- like if it's tied to financial aid or an SLA that's close to breaching. I built a macro for this at Boise to make sure I didn't skip anything. The goal is that Engineering can pick it up without asking me a single follow-up question.</div>
+        <div class="avoid-box" style="display:none">Avoid: Vague handoffs like "user is having an issue with the system." That's not useful to anyone.</div>
+      </div>
+
     </div>
 
     <hr class="divider">
@@ -1055,48 +700,48 @@
 
       <div class="interview-card">
         <div class="interview-q">How do you communicate bad news to a client -- like when a fix is going to take longer than expected?</div>
-        <div class="interview-why">Why she asks: Tina cares about the client relationship. She wants to know you won't go silent or overpromise.</div>
+        <div class="interview-why">Why she asks: She wants to know you won't go silent or overpromise.</div>
         <button class="reveal-btn" onclick="toggleAnswer(this)">Show suggested answer</button>
-        <div class="answer-box">I'd reach out proactively -- before they have to follow up. I'd tell them what I know, what's still being worked on, and give a realistic timeframe if I have one. If I don't have a timeline yet, I'd say that clearly rather than guessing. I'd also tell them what I'm doing in the meantime and when they can expect another update. The goal is that they never wonder if their issue was forgotten.</div>
-        <div class="avoid-box" style="display:none">Avoid: "I'd escalate and let them know when it's fixed." That's passive. Tina wants to hear that you stay in contact.</div>
+        <div class="answer-box">I'd reach out proactively -- before they have to follow up. I'd tell them what I know, what's still being worked on, and give a realistic timeframe if I have one. If I don't have a timeline yet, I'd say that clearly rather than guessing. I'd also tell them what I'm doing in the meantime and when to expect the next update. The goal is that they never wonder if their issue was forgotten.</div>
+        <div class="avoid-box" style="display:none">Avoid: "I'd escalate and let them know when it's fixed." That's passive. Tina wants to hear that you stay in contact yourself.</div>
       </div>
 
       <div class="interview-card">
         <div class="interview-q">Tell me about a time you turned a frustrated customer into a satisfied one.</div>
-        <div class="interview-why">Why she asks: This is a classic CS question. She wants empathy AND a real example.</div>
+        <div class="interview-why">Why she asks: She wants empathy AND a real example.</div>
         <button class="reveal-btn" onclick="toggleAnswer(this)">Show suggested answer</button>
-        <div class="answer-box">At Trader Joe's I was promoted to Mate within 6 weeks, which meant I was handling customer complaints and difficult situations on the floor every shift. There was a customer who came in upset about a product issue -- I didn't argue with her, I just listened first and made sure she felt heard before I did anything. Then I solved the actual problem quickly. She came back later that day to tell my captain I was the reason she'd keep shopping with us. I think the instinct to listen before fixing has carried into everything I've done since.</div>
-        <div class="avoid-box" style="display:none">Avoid: A vague story or one where the customer "ended up okay." Be specific and show it was your actions that changed it.</div>
+        <div class="answer-box">At Trader Joe's I was promoted to Mate within 6 weeks, which meant I was handling customer complaints on the floor every shift. There was a customer who came in upset about a product issue -- I didn't argue, I just listened first and made sure she felt heard before I did anything. Then I solved the actual problem quickly. She came back later that day to tell my captain I was the reason she'd keep shopping with us. Listening before fixing has carried into everything I've done since.</div>
+        <div class="avoid-box" style="display:none">Avoid: A vague story. Be specific and show it was your actions that changed the outcome.</div>
       </div>
 
       <div class="interview-card">
         <div class="interview-q">What do you know about Portico and why do you want to work here specifically?</div>
-        <div class="interview-why">Why she asks: She's testing whether you did your homework and whether you're actually interested or just job hunting.</div>
+        <div class="interview-why">Why she asks: She's testing whether you did your homework and whether you're actually interested.</div>
         <button class="reveal-btn" onclick="toggleAnswer(this)">Show suggested answer</button>
-        <div class="answer-box">Portico launched in May 2025 by merging four companies -- Verity IQ, Campus Ivy, CourseKey, and Trajecsys -- into one platform for career-focused schools. You serve over 300 institutions and 400,000 students in trade, nursing, allied health, and beauty programs. What stood out to me is that this isn't generic EdTech -- it's built for students who are trying to get into a career, not a four-year degree. That matters. I also built a support dashboard modeled after your actual workflow to prepare for this role, which gave me hands-on experience with SLA tracking, escalation logic, and API integration in a Portico-style context. I want to be here because the work is real and the impact on students is direct.</div>
-        <div class="avoid-box" style="display:none">Avoid: "I saw it on LinkedIn and it seemed like a good fit." That's a non-answer. Show you researched them.</div>
+        <div class="answer-box">Portico launched in May 2025 by merging four companies -- Verity IQ, Campus Ivy, CourseKey, and Trajecsys -- into one platform for career-focused schools. You serve over 300 institutions and 400,000 students in trade, nursing, allied health, and beauty programs. What stood out to me is that this isn't generic EdTech -- it's built for students trying to get into a career, not a four-year degree. That matters. I also built a platform simulator to study your modules before this interview. I want to work here because the work is real and the impact on students is direct.</div>
+        <div class="avoid-box" style="display:none">Avoid: "I saw it on LinkedIn and it seemed like a good fit." Show you researched them.</div>
       </div>
 
       <div class="interview-card">
         <div class="interview-q">How do you handle a situation where a client is demanding something you can't actually give them?</div>
-        <div class="interview-why">Why she asks: This happens constantly in B2B SaaS support. She wants to know you can hold a boundary without losing the relationship.</div>
+        <div class="interview-why">Why she asks: This happens constantly in B2B SaaS support.</div>
         <button class="reveal-btn" onclick="toggleAnswer(this)">Show suggested answer</button>
-        <div class="answer-box">I'd acknowledge what they're asking for and why it makes sense from their perspective. Then I'd be honest about what I can and can't do -- I wouldn't promise something just to get off the call. If there's a workaround or an alternative that gets them most of what they need, I'd offer that. If it's a feature request, I'd let them know I'll pass it to the Product team so it's on record. The goal is for them to feel like their frustration was heard and their ask was taken seriously, even if the answer is no right now.</div>
-        <div class="avoid-box" style="display:none">Avoid: "I'd just escalate it." That's not managing the client relationship. Tina wants to see you can handle the conversation yourself.</div>
+        <div class="answer-box">I'd acknowledge what they're asking for and why it makes sense from their side. Then I'd be honest about what I can and can't do -- I wouldn't promise something just to end the conversation. If there's a workaround that gets them most of what they need, I'd offer that. If it's a feature request, I'd let them know I'll pass it to the Product team so it's on record. The goal is for them to feel like their ask was heard and taken seriously, even if the answer is no right now.</div>
+        <div class="avoid-box" style="display:none">Avoid: "I'd just escalate it." That's not managing the client relationship.</div>
       </div>
 
       <div class="interview-card">
-        <div class="interview-q">What do you think makes someone successful in a role like this at a company like Portico?</div>
-        <div class="interview-why">Why she asks: She's looking for self-awareness and cultural fit. Portico values: customer-centricity, innovation, transparency. Thrives: visionaries, team players, self-starters.</div>
+        <div class="interview-q">What do you think makes someone successful in a role like this?</div>
+        <div class="interview-why">Why she asks: She's looking for self-awareness and cultural fit.</div>
         <button class="reveal-btn" onclick="toggleAnswer(this)">Show suggested answer</button>
-        <div class="answer-box">Curiosity and follow-through. In a platform that's still being unified from four different systems, there will always be something you don't know yet -- so you have to be willing to dig, learn fast, and ask good questions. But curiosity without follow-through just creates noise. The schools you support are dealing with real student outcomes, so they need someone who says "I'll get back to you by end of day" and actually does. I also think transparency matters -- being honest about what you don't know builds more trust than pretending.</div>
-        <div class="avoid-box" style="display:none">Avoid: "I'm a hard worker and a fast learner." That's generic. Tie it to something specific about Portico.</div>
+        <div class="answer-box">Curiosity and follow-through. In a platform still being unified from four different systems, there's always something you don't know yet -- so you have to be willing to dig in and learn fast. But curiosity without follow-through just creates noise. The schools you support are dealing with real student outcomes, so they need someone who says "I'll get back to you by end of day" and actually does. I also think transparency matters -- being honest about what you don't know yet builds more trust than pretending.</div>
+        <div class="avoid-box" style="display:none">Avoid: "I'm a hard worker and fast learner." That's generic. Tie it to something specific about Portico.</div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- ===== TAB 4: WILDCARD ===== -->
+<!-- TAB 4: WILDCARD -->
 <div class="tab-content" id="tab-wildcard">
   <div class="main">
     <div class="section-title">Wildcard Prep</div>
@@ -1109,7 +754,7 @@
     <div class="wildcard-card">
       <div class="wildcard-label">Role Play</div>
       <div class="wildcard-q">"Let's do a quick role play. I'm a school administrator and I can't log in to the system. Go."</div>
-      <div class="wildcard-tip"><strong>How to handle it:</strong> Don't panic. Treat it like a real ticket. Start with "Thanks for reaching out -- let's get this sorted. Can you tell me what error you're seeing when you try to log in?" Then work through it: 401 = permissions/session. No error = possibly wrong URL or browser issue. Account locked = check with their admin. Stay calm, be methodical, don't rush to a solution before you have the info.</div>
+      <div class="wildcard-tip"><strong>How to handle it:</strong> Don't panic. Treat it like a real ticket. Start with: "Thanks for reaching out -- let's get this sorted. Can you tell me what error you're seeing when you try to log in?" Then work through it: 401 = permissions or session issue. No error = possibly wrong URL or browser issue. Account locked = check with their admin. Stay calm, be methodical, don't rush to a solution before you have the info.</div>
     </div>
 
     <div class="wildcard-card">
@@ -1121,38 +766,37 @@
     <div class="wildcard-card">
       <div class="wildcard-label">Weakness Question</div>
       <div class="wildcard-q">"What's a weakness you're actively working on?"</div>
-      <div class="wildcard-tip"><strong>How to handle it:</strong> Don't say "I work too hard" or "I'm a perfectionist." Be real. A strong answer: "I'm still building my depth on enterprise SaaS platforms -- I've been studying Portico's platform specifically and built a simulator to practice, but I know there's a learning curve and I'm committed to getting up to speed fast." That turns a gap into evidence of your growth mindset.</div>
+      <div class="wildcard-tip"><strong>How to handle it:</strong> Don't say "I work too hard" or "I'm a perfectionist." Be real. A strong answer: "I'm still building depth on enterprise SaaS platforms -- I've been studying Portico's platform specifically and built a simulator to practice, but I know there's a learning curve and I'm committed to getting up to speed fast." That turns a gap into evidence of your work ethic.</div>
     </div>
 
     <div class="wildcard-card">
       <div class="wildcard-label">Experience Gap</div>
       <div class="wildcard-q">"You don't have direct SaaS support experience. Why should we hire you?"</div>
-      <div class="wildcard-tip"><strong>How to handle it:</strong> Don't apologize for your resume. "My IT internship gave me real troubleshooting experience across 12 school sites and Zendesk. I built a support dashboard modeled after Portico's workflow. I've been studying your platform for weeks. I know I'm not coming in with years of SaaS experience, but I'm coming in with the instincts, the prep, and the drive -- and I don't think you'll find someone who's done more to prepare for this specific role."</div>
+      <div class="wildcard-tip"><strong>How to handle it:</strong> Don't apologize for your resume. "My IT internship gave me real troubleshooting experience across 12 school sites and Zendesk. I built a platform simulator and studied your knowledge base to prepare for this role. I know I'm not coming in with years of SaaS experience, but I'm coming in with the instincts, the prep, and the drive -- and I don't think you'll find someone who's done more to get ready for this specific job."</div>
     </div>
 
     <div class="wildcard-card">
       <div class="wildcard-label">Compensation</div>
       <div class="wildcard-q">"Are you okay with the $58k salary range?"</div>
-      <div class="wildcard-tip"><strong>How to handle it:</strong> The listed salary is $58k. If you're comfortable with that, a simple "Yes, that works for me" is fine. If you want to negotiate later, now is not the time -- lock in the offer first. You can say "I'm focused on finding the right role and company -- I'm confident we can make it work if there's a mutual fit."</div>
+      <div class="wildcard-tip"><strong>How to handle it:</strong> The listed salary is $58k. If you're comfortable with that, a simple "Yes, that works for me" is fine. If you want to negotiate later, now is not the time -- lock in the offer first. You can say: "I'm focused on finding the right role and company -- I'm confident we can make it work if there's a mutual fit."</div>
     </div>
 
     <div class="wildcard-card">
       <div class="wildcard-label">The Simulator</div>
       <div class="wildcard-q">If they ask you to show your portfolio or walk them through your work</div>
-      <div class="wildcard-tip"><strong>How to handle it:</strong> Lead with the Portico Support Dashboard at portico-dashboard.vercel.app. Explain: "I built this to model how support operations work in a SaaS company. It pulls live ticket data from Airtable, tracks SLA status, and uses a Make.com automation to auto-escalate overdue tickets every 15 minutes." Then pivot: "I also built a Portico platform simulator to learn your modules before this interview." That's a strong one-two punch.</div>
+      <div class="wildcard-tip"><strong>How to handle it:</strong> Lead with the Portico platform simulator. Explain: "I built this to learn your modules before the interview -- it covers all seven modules including the student and admin views, ticket queue with SLA tracking, error codes, and canned responses." Then mention the support dashboard as a separate portfolio piece showing SLA tracking and escalation logic. That's a strong one-two showing both platform prep and independent building.</div>
     </div>
 
     <div class="wildcard-card">
       <div class="wildcard-label">Culture Fit</div>
       <div class="wildcard-q">"How would you describe your work style?"</div>
-      <div class="wildcard-tip"><strong>How to handle it:</strong> Tie it to Portico's values. "I'm a self-starter -- I don't wait for someone to tell me what to learn. I built prep tools for this interview on my own. I'm also a team player: I know support doesn't work in isolation and I'd want to be useful to Engineering and Customer Success, not just the people filing tickets. And I'm customer-first -- at Trader Joe's that was the whole job, and I carried it into my IT work too."</div>
+      <div class="wildcard-tip"><strong>How to handle it:</strong> Tie it to Portico's culture. "I'm a self-starter -- I don't wait for someone to tell me what to learn. I built prep tools for this interview on my own. I'm also a team player: I know support doesn't work in isolation and I'd want to be useful to Engineering and Customer Success, not just the people filing tickets. And I'm customer-first -- at Trader Joe's that was the whole job, and I carried it into my IT work too."</div>
     </div>
 
   </div>
 </div>
 
 <script>
-  // TAB SWITCHING
   function switchTab(tab) {
     document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
     document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
@@ -1160,7 +804,6 @@
     event.target.classList.add('active');
   }
 
-  // MODULE ACCORDION
   function toggleModule(header) {
     const body = header.nextElementSibling;
     const chevron = header.querySelector('.chevron');
@@ -1168,7 +811,6 @@
     chevron.classList.toggle('open');
   }
 
-  // INTERVIEW REVEAL
   function toggleAnswer(btn) {
     const card = btn.parentElement;
     const answerBox = card.querySelector('.answer-box');
@@ -1179,7 +821,6 @@
     btn.textContent = isOpen ? 'Show suggested answer' : 'Hide answer';
   }
 
-  // TICKETS DATA
   const tickets = [
     {
       id: 'TKT-1042',
@@ -1201,8 +842,8 @@
           ],
           correct: 1,
           feedback: {
-            correct: "Exactly right. CourseKey pulls student data from Verity Student. If Tyler isn't active and correctly enrolled in SIS, he won't appear in CourseKey no matter what. Always check the source of truth first.",
-            incorrect: "Not the right first move. CourseKey gets its student data from Verity Student (SIS). If Tyler isn't correctly set up there, he won't appear anywhere downstream. Check SIS first."
+            correct: "Exactly right. CourseKey pulls student data from Verity Student. If Tyler isn't active and correctly enrolled in SIS, he won't appear in CourseKey. Always check the source of truth first.",
+            incorrect: "CourseKey gets its student data from Verity Student (SIS). If Tyler isn't correctly set up there, he won't appear anywhere downstream. Check SIS first."
           }
         },
         {
@@ -1210,41 +851,27 @@
           options: [
             "Tell Maria it should appear soon and to check again tomorrow",
             "Ask Maria to manually add Tyler in CourseKey",
-            "Check when the last sync between Verity Student and CourseKey ran, and whether it completed",
-            "Escalate to Engineering right away"
+            "Document that Tyler is active in SIS but missing in CourseKey, and escalate to Engineering as a likely sync issue",
+            "Escalate to Engineering right away without checking anything else"
           ],
           correct: 2,
           feedback: {
-            correct: "Good. The sync between SIS and CourseKey runs on a schedule. If Tyler is correctly set up in SIS but not showing in CourseKey, a sync failure is the likely cause. You need to check the sync status before escalating.",
-            incorrect: "Not yet. Tyler looks correct in SIS, so this is likely a sync timing issue. Check when the last CourseKey-to-SIS sync ran and whether it completed successfully before escalating or asking Maria to do anything."
+            correct: "Good. Tyler is correct in SIS but not showing in CourseKey -- that points to a sync issue. You've confirmed what you can see. Document it clearly and escalate. You're not triggering the sync yourself.",
+            incorrect: "Tyler looks correct in SIS, so this is likely a sync issue between the two systems. Document what you've confirmed and escalate to Engineering -- you've hit the edge of what Tier 1 can check here."
           }
         },
         {
-          question: "You find that the sync ran 6 hours ago and should have included Tyler, but he's still not in CourseKey. What do you do?",
-          options: [
-            "Tell Maria to wait another few hours",
-            "Ask Maria to re-enroll Tyler and see if that fixes it",
-            "Document the issue and escalate to Engineering to re-trigger the sync, noting the SLA urgency",
-            "Delete Tyler's record and re-enter it"
-          ],
-          correct: 2,
-          feedback: {
-            correct: "That's the right call. A 6-hour-old sync that didn't include an active student is a sync failure. You've done your diagnostic work, now escalate with full context: school, student, SIS status, sync timestamp, SLA pressure. Engineering needs to re-trigger the webhook.",
-            incorrect: "This isn't something Maria can fix on her end, and waiting or re-entering data won't address a sync failure. Escalate to Engineering with your findings -- document the school, student, SIS status, sync timestamp, and note the SLA urgency."
-          }
-        },
-        {
-          question: "How do you communicate back to Maria while Engineering is working on it?",
+          question: "Engineering confirms a sync failure and says they'll fix it in 1-2 hours. How do you handle Maria in the meantime?",
           options: [
             "Wait until it's fixed, then send one message",
             "Tell her you escalated and she'll hear back when it's done",
-            "Send her an update now: confirm you found the issue, tell her it's with Engineering, give a realistic timeframe if you have one, and promise a follow-up",
-            "Ask her to call back in the morning"
+            "Send her an update now: confirm what you found, tell her it's with Engineering, give the 1-2 hour timeframe, and promise a follow-up",
+            "Ask her to call back later"
           ],
           correct: 2,
           feedback: {
-            correct: "This is the customer-centricity piece. Maria has a student missing hours right now. She needs to know her ticket wasn't dropped. A proactive update with what you know -- even if you don't have a fix yet -- is the right move every time.",
-            incorrect: "Going silent until it's resolved is a good way to get an angry follow-up call. Send Maria a proactive update: you found the issue, it's with Engineering, here's when to expect the next update. Keep her in the loop."
+            correct: "This is the customer-centricity piece. Maria has a student missing hours right now. She needs to know her ticket wasn't dropped. A proactive update -- even without a fix yet -- is the right move every time.",
+            incorrect: "Going silent until it's resolved is a good way to get an angry follow-up call. Send Maria a proactive update now with what you know."
           }
         }
       ]
@@ -1269,50 +896,50 @@
           ],
           correct: 0,
           feedback: {
-            correct: "Right. The SLA clock is ticking and Denise is already stressed. Acknowledge first -- it takes 30 seconds and it tells her she wasn't ignored. Then dig into the issue. You can work and communicate at the same time.",
-            incorrect: "When a client is this upset and the SLA is almost gone, the first thing is acknowledgment. Even a quick 'I have your ticket and I'm looking into this right now' buys goodwill and resets the tone. Then you diagnose."
+            correct: "Right. The SLA clock is ticking and Denise is already stressed. Acknowledge first -- it takes 30 seconds and tells her she wasn't ignored. Then dig in.",
+            incorrect: "When a client is this upset and the SLA is almost gone, acknowledge first. Even a quick 'I have your ticket and I'm on it right now' resets the tone."
           }
         },
         {
-          question: "You open Campus Ivy and look at the workflow dashboard. The disbursement items show in the red column (stuck/failed). What does that tell you?",
+          question: "You check Campus Ivy and the disbursement items are in the red column (stuck). What does that tell you?",
           options: [
-            "The disbursements were already sent and are just showing an old status",
-            "Something blocked the disbursements from processing -- this is a real failure, not a display glitch",
+            "The disbursements already went out and are showing an old status",
+            "Something blocked the disbursements -- this is a real failure, not a display glitch",
             "Denise probably made a data entry error",
-            "The system is just slow today"
+            "The system is just running slow"
           ],
           correct: 1,
           feedback: {
-            correct: "Correct. Red items in the Campus Ivy workflow dashboard mean the disbursement process hit a blocker and stopped. This is not a cosmetic issue. You need to find out why -- common reasons are a SAP hold, enrollment status issue in SIS, or a COD reporting error.",
-            incorrect: "Red items in Campus Ivy's workflow dashboard mean the process failed -- something is blocking it. This is a real problem, not a delay or display issue. You need to find the root cause."
+            correct: "Correct. Red items in the Campus Ivy workflow dashboard mean the process hit a blocker. This is a real problem. Document it and escalate -- you're not clearing or re-submitting disbursements yourself.",
+            incorrect: "Red in Campus Ivy's workflow dashboard means the process failed. Document it and escalate -- disbursements are not something you fix at Tier 1."
           }
         },
         {
-          question: "You check and all three students are active in Verity Student with no SAP holds. The disbursements still won't process. What's your next step?",
+          question: "You check and all three students are active in Verity Student with no obvious holds. Disbursements are still stuck. What's your next step?",
           options: [
             "Tell Denise to try re-submitting the disbursements manually",
-            "Escalate to Engineering immediately with full context -- student IDs, what you've checked, that COD reporting may be involved",
+            "Escalate to Engineering immediately with full context -- student IDs, what you checked, and that it's time-sensitive",
             "Wait to see if the system self-corrects",
             "Ask Denise to check with the students directly"
           ],
           correct: 1,
           feedback: {
-            correct: "This is the right call. You've ruled out the things you can check -- enrollment status and SAP holds. If the disbursements are still stuck and COD or NSLDS reporting might be involved, that's beyond what you should try to fix manually. Escalate with everything you've checked so Engineering can pick up where you left off.",
-            incorrect: "You've done your diagnostic work -- enrollment is fine, no SAP holds. If Pell disbursements are stuck and federal reporting systems may be involved, you escalate. Don't ask Denise to do your job and don't wait -- three students' housing is on the line."
+            correct: "You've confirmed what you can. Enrollment looks fine, disbursements are still stuck -- this is beyond Tier 1. Escalate with everything you checked so Engineering can move fast.",
+            incorrect: "You've done your checks. This is beyond what you can fix. Escalate to Engineering with full context and flag the urgency -- three students' housing is on the line."
           }
         },
         {
-          question: "Engineering tells you this will take 2-3 hours to resolve. How do you handle Denise?",
+          question: "Engineering says the fix will take 2-3 hours. How do you handle Denise?",
           options: [
             "Forward her the Engineering message and let her read it",
             "Tell her you'll update her once it's fixed",
-            "Call or message her directly, explain what was found, give the 2-3 hour timeline, apologize for the urgency, and confirm you'll follow up the moment it's resolved",
+            "Reach out directly, explain what was found, give the 2-3 hour timeline, and confirm you'll follow up the moment it's resolved",
             "Tell her to contact Engineering directly"
           ],
           correct: 2,
           feedback: {
-            correct: "This is Tina's territory -- customer relationship management. Denise is stressed about students' housing. She needs a real human response, not a forwarded message. Own the communication, give her the honest timeline, and follow through.",
-            incorrect: "Forwarding a message or going quiet isn't customer-centric. Denise is dealing with a real impact on students. You're the point of contact -- reach out directly, give the honest timeline, and promise a follow-up the moment it's resolved."
+            correct: "Denise is stressed about students' housing. She needs a real human response, not a forwarded message. Own the communication, give the honest timeline, and follow through.",
+            incorrect: "You're the point of contact -- reach out directly, give the honest timeline, and promise a follow-up when it's resolved."
           }
         }
       ]
@@ -1328,7 +955,7 @@
       message: "One of my reps, Carlos, just started Monday and he says he can't see any of his assigned leads in the CRM. The other reps can see theirs fine. Is there something we need to set up for new users?",
       steps: [
         {
-          question: "What type of issue is this most likely to be?",
+          question: "What type of issue is this most likely?",
           options: [
             "A system outage affecting new users",
             "A permissions or role configuration issue for Carlos's account",
@@ -1337,50 +964,36 @@
           ],
           correct: 1,
           feedback: {
-            correct: "Exactly. One specific user can't see something that others can see fine -- that's almost always a permissions or role configuration issue, not a system bug. New users especially may not have the correct role or territory assignment set up.",
-            incorrect: "When one person has an issue that others don't, think permissions first. Carlos is new and his account setup might be incomplete -- wrong role, no territory assigned, or missing access settings."
+            correct: "Exactly. One specific user can't see something others can -- that's almost always a permissions or role issue. New users especially may not have the correct setup.",
+            incorrect: "When one person has an issue that others don't, think permissions first. Carlos is new and his account might not be set up correctly."
           }
         },
         {
-          question: "You go into User Management. Carlos's role is set to 'Viewer' instead of 'Admissions Rep.' What does this mean?",
+          question: "You check User Management. Carlos's role is set to 'Viewer' instead of 'Admissions Rep.' What's the right move?",
           options: [
-            "He can see leads but can't edit them",
-            "He has read-only access -- he likely can't see the leads assigned to his role at all",
-            "His account is deactivated",
-            "This is normal for new users"
+            "Change his role to Admissions Rep right now",
+            "Confirm with Jordan that they want his role changed, then make the update (or ask an admin to)",
+            "Ask Carlos to request the change himself",
+            "Escalate to Engineering"
           ],
           correct: 1,
           feedback: {
-            correct: "Right. A Viewer role in a CRM typically means limited or read-only access -- and depending on how Verity Dialog is configured, a Viewer may not have access to the admissions lead queue at all. This is the most likely cause.",
-            incorrect: "A 'Viewer' role means limited access. In Verity Dialog, the admissions lead queue is almost certainly restricted to specific roles. Carlos needs his role changed to 'Admissions Rep' (or equivalent) to see his leads."
+            correct: "Good instinct. Even if you technically can make the change, confirm with the person who opened the ticket first. Role changes affect what data someone can see -- always verify it's authorized.",
+            incorrect: "Confirm with Jordan before making any role changes. Even simple ones should be verified -- you don't own the school's user permissions."
           }
         },
         {
-          question: "You've confirmed the role issue. Can you change Carlos's role yourself or do you need to involve someone else?",
-          options: [
-            "I can change it myself since I have access to User Management",
-            "I should confirm with Jordan (the Admissions Director) that they want this change made, then ask an admin or check if I have permission to make it",
-            "I should ask Carlos to request the change himself",
-            "This needs to go to Engineering"
-          ],
-          correct: 1,
-          feedback: {
-            correct: "Good instinct. Even if you have the technical ability to change a user's role, you should confirm with the person who requested the ticket (Jordan) that the change is authorized. Role changes in a live system should be verified -- don't assume.",
-            incorrect: "Even if you technically can make the change, you should confirm with Jordan first. Role changes affect what data someone can see and do. Always verify the change is authorized before making it in a live system."
-          }
-        },
-        {
-          question: "Jordan confirms the role change. After you update Carlos's role, what do you do before closing the ticket?",
+          question: "Jordan confirms. Role is updated. What do you do before closing the ticket?",
           options: [
             "Close the ticket and move on",
-            "Tell Carlos to log out and back in, confirm he can now see his leads, then close the ticket with documentation of what was changed",
+            "Have Carlos log out and back in, confirm he can see his leads, then close with documentation of what was changed",
             "Keep the ticket open for a week in case it happens again",
-            "Ask Engineering to verify the change"
+            "Ask Engineering to verify"
           ],
           correct: 1,
           feedback: {
-            correct: "Always verify the fix worked before closing. Have Carlos log out and back in (role changes often require a fresh session), confirm he can see his leads, then document what was changed and close with a summary. Clean documentation is part of the job.",
-            incorrect: "Don't close the ticket until you've verified the fix actually worked. Have Carlos log out and log back in -- role changes often need a session refresh. Confirm he can see his leads, then document the change and close the ticket."
+            correct: "Always verify the fix worked before closing. Role changes often need a session refresh. Confirm it works, document what changed, then close cleanly.",
+            incorrect: "Don't close until you've confirmed the fix worked. Have Carlos log out and back in, verify he can see his leads, then document and close."
           }
         }
       ]
@@ -1393,62 +1006,62 @@
       slaClass: 'sla-yellow',
       module: 'sis',
       moduleLabel: 'Verity Student',
-      message: "We're trying to generate a transcript for a graduating student, Marcus Webb, and it keeps failing. There's no error message, it just won't generate. He needs it for a job application by end of week.",
+      message: "We're trying to generate a transcript for a graduating student, Marcus Webb, and it keeps failing with no error message. He needs it for a job application by end of week.",
       steps: [
         {
           question: "No error message and a transcript that won't generate. What do you check first?",
           options: [
             "Assume it's a system bug and escalate to Engineering",
-            "Check Marcus's record in Verity Student for completeness -- missing required fields, open status issues, or holds",
+            "Check Marcus's record in Verity Student for anything obviously incomplete -- missing dates, open status, or holds",
             "Ask Sandra to try a different browser",
-            "Ask Marcus to request the transcript himself"
+            "Ask Marcus to request it himself"
           ],
           correct: 1,
           feedback: {
-            correct: "Right. A silent failure (no error message) on a transcript usually means the system is hitting a data validation issue -- a missing field, an incomplete record, or a hold. Check the student record in Verity Student before anything else.",
-            incorrect: "A silent failure usually means the system hit a data problem it can't display cleanly. Check Marcus's record in Verity Student first -- look for missing dates, incomplete enrollment info, or any holds on the account."
+            correct: "Right. A silent failure on a transcript usually means the system hit a data issue. Check the student record first -- that's something you can actually see.",
+            incorrect: "A silent failure usually means a data problem. Check Marcus's record in Verity Student before escalating."
           }
         },
         {
-          question: "You open Marcus's record. His end date field is blank -- it shows he's still active even though he completed the program. What does this mean?",
+          question: "You open Marcus's record. His end date field is blank -- he shows as still active even though he completed the program. What does this mean?",
           options: [
             "This is normal and shouldn't affect the transcript",
-            "The system may not recognize him as a graduate and therefore won't generate a completion transcript",
+            "The system may not recognize him as a graduate and is blocking the transcript",
             "His hours are wrong",
             "He needs to re-enroll"
           ],
           correct: 1,
           feedback: {
-            correct: "Exactly. Most SIS systems require a completion or end date to classify a student as a graduate. Without it, the system sees him as still active and may block transcript generation for a 'completed' record that technically isn't closed out.",
-            incorrect: "A missing end/completion date is likely the cause. Without it, the system doesn't recognize Marcus as a graduate -- it just sees an open, active record. Transcript generation for completed students usually requires a closed record."
+            correct: "A missing end/completion date likely means the system doesn't see Marcus as a graduate. It's seeing an open, active record. This is a data gap the registrar can fix.",
+            incorrect: "Without a completion date, the system sees him as still active. That's likely blocking the transcript. The registrar needs to fill in that field."
           }
         },
         {
-          question: "Can you add the end date yourself, or does someone else need to do this?",
+          question: "Can you fill in the end date yourself?",
           options: [
-            "I can add it directly in the system",
-            "The Registrar (Sandra) or an admin at the school needs to enter this -- I should walk her through where to do it",
+            "Yes, I can add it directly",
+            "No -- walk Sandra through where to enter it in Verity Student. Student record edits belong to the school's registrar, not support.",
             "Engineering needs to update this field",
             "Marcus needs to provide documentation first"
           ],
           correct: 1,
           feedback: {
-            correct: "Correct. Student record edits like completion dates should be made by the school's registrar or admin, not by you. You don't own the student's data -- you support the people who do. Walk Sandra through where to enter the end date in Verity Student.",
-            incorrect: "You shouldn't be editing student records directly -- that's the registrar's job. Walk Sandra through how to enter the completion date in Verity Student. Your role is to guide, not to modify their academic records."
+            correct: "Correct. You guide, the registrar acts. You don't edit student academic records -- that's their data, their responsibility.",
+            incorrect: "You shouldn't be editing student records. Walk Sandra through how to enter the completion date herself."
           }
         },
         {
-          question: "Sandra adds the end date. The transcript still won't generate. Now what?",
+          question: "Sandra adds the end date. Transcript still won't generate. Now what?",
           options: [
-            "Tell Sandra it might take 24 hours and to try again tomorrow",
-            "Check if there's a financial hold in Campus Ivy -- FA holds can block transcripts",
+            "Tell Sandra it might take 24 hours",
+            "Check Campus Ivy for a financial hold -- FA holds can block transcripts even when SIS looks fine",
             "Escalate to Engineering immediately",
             "Ask Sandra to delete the record and re-enter it"
           ],
           correct: 1,
           feedback: {
-            correct: "Good catch. Financial aid holds in Campus Ivy can block transcript generation even when the SIS record looks fine. This is exactly the kind of cross-system issue you need to know about. Check Campus Ivy for any open balance or hold on Marcus's account.",
-            incorrect: "The systems are connected. A financial hold in Campus Ivy can block transcript generation even if SIS looks fine. Before escalating to Engineering, check if Marcus has an open balance or FA hold in Campus Ivy -- that's a common silent blocker."
+            correct: "Good catch. Financial holds in Campus Ivy can block transcripts silently. Check there before escalating -- it's something you can see and identify.",
+            incorrect: "Before escalating, check Campus Ivy. A financial hold there can block transcript generation even if SIS looks fine."
           }
         }
       ]
@@ -1461,24 +1074,24 @@
       slaClass: 'sla-green',
       module: 'trajecsys',
       moduleLabel: 'Trajecsys',
-      message: "Our nursing students are logging clinical hours through Trajecsys with their preceptors, but the hours aren't showing up in their student records. Three students are close to their required clinical hour minimum and we're worried they'll look non-compliant.",
+      message: "Our nursing students are logging clinical hours through Trajecsys with their preceptors, but the hours aren't showing up in their student records. Three students are close to their required clinical hour minimum.",
       steps: [
         {
-          question: "Clinical hours logged in Trajecsys aren't appearing in student records. What's the first thing to clarify?",
+          question: "Clinical hours in Trajecsys aren't appearing in student records. What's the first thing to clarify?",
           options: [
-            "Whether the preceptors are logging the hours or the students",
+            "Whether the preceptors are logging the hours or the students are",
             "Whether the students are using the right app",
             "Whether Summit Nursing is on the Trajecsys plan",
             "Whether Trajecsys is down"
           ],
           correct: 0,
           feedback: {
-            correct: "Right. In Trajecsys, preceptors (not students) log the clinical hours. If the preceptors aren't entering the hours -- or aren't saving them correctly -- the students' records will be blank. Confirm who's entering the data before assuming a system error.",
-            incorrect: "In Trajecsys, preceptors log the hours, not students. If the preceptors aren't entering or saving hours correctly, the records will be empty. Confirm who's actually doing the data entry before diagnosing a system issue."
+            correct: "Right. In Trajecsys, preceptors log the hours -- not students. If preceptors aren't entering them correctly, the records will be blank. Confirm who's doing the data entry before assuming a system error.",
+            incorrect: "In Trajecsys, preceptors log the hours, not students. Confirm who's actually entering the data before diagnosing further."
           }
         },
         {
-          question: "Rosa confirms the preceptors ARE logging hours and she can see them in Trajecsys. But they're not appearing in the Verity Student records. What's this?",
+          question: "Rosa confirms preceptors ARE logging hours and she can see them in Trajecsys. But they're not appearing in Verity Student. What's this?",
           options: [
             "The preceptors logged them wrong",
             "A sync or integration issue between Trajecsys and Verity Student",
@@ -1487,36 +1100,36 @@
           ],
           correct: 1,
           feedback: {
-            correct: "Correct. If data exists in Trajecsys but isn't reaching Verity Student, that's an integration/sync issue between the two systems. Trajecsys was acquired by Portico in late 2025 -- integrations between newer acquisitions can have sync issues that require Engineering.",
-            incorrect: "The data is in Trajecsys but not reaching Verity Student. That's a sync or integration failure between the two systems. Trajecsys is Portico's newest acquisition -- cross-system sync issues here are likely to need Engineering."
+            correct: "Correct. Data exists in Trajecsys but isn't reaching Verity Student -- that's a sync failure between two systems. That's Engineering territory.",
+            incorrect: "The data is in Trajecsys but not in SIS. That's a cross-system sync issue. Escalate to Engineering."
           }
         },
         {
-          question: "This is a cross-system sync issue between Trajecsys and Verity Student. What do you do?",
+          question: "What do you do with this cross-system sync issue?",
           options: [
             "Ask Rosa to re-enter all the hours manually in Verity Student",
             "Tell Rosa to wait -- it might sync overnight",
-            "Document what you've confirmed, escalate to Engineering with the specific systems involved, and note the compliance urgency for the three students near their hour minimum",
-            "Close the ticket and open a new one with Engineering's team"
+            "Document what you've confirmed, escalate to Engineering, and flag the compliance urgency for the three students near their hour minimum",
+            "Close the ticket and open a new one with Engineering"
           ],
           correct: 2,
           feedback: {
-            correct: "Exactly right. You've done the diagnostic work: hours exist in Trajecsys, not in SIS, so it's a cross-system sync failure. Escalate to Engineering with: school name, affected students, Trajecsys confirmation that hours exist, and the fact that three students are near a compliance threshold. That urgency context matters.",
-            incorrect: "You've confirmed what you can -- the data exists in Trajecsys but isn't syncing to SIS. Don't ask Rosa to re-enter data that's already there, and don't just wait. Escalate to Engineering with full context and flag the compliance urgency."
+            correct: "Right. You've confirmed what you can: hours exist in Trajecsys, not in SIS. Escalate with full context and flag that students are close to a compliance threshold. That urgency matters.",
+            incorrect: "Don't ask Rosa to re-enter data that's already there. Escalate to Engineering with what you've confirmed and flag the compliance urgency."
           }
         },
         {
           question: "Engineering says the fix will take 4-6 hours. Rosa is worried about compliance documentation. What do you offer?",
           options: [
             "Tell her there's nothing you can do until Engineering fixes it",
-            "Suggest that in the meantime, Rosa document the hours from Trajecsys as an internal record, so there's evidence of compliance even if the sync isn't complete yet -- and confirm you'll follow up when it's resolved",
+            "Suggest she keep the Trajecsys records as documentation of the hours in the meantime -- they exist and show the hours were logged -- and confirm you'll follow up when it's resolved",
             "Tell her to have the students re-log the hours",
             "Ask her to email Engineering directly"
           ],
           correct: 1,
           feedback: {
-            correct: "This is going above the technical fix. Rosa has a real compliance concern. Suggesting she document the Trajecsys records as backup is a practical, empathetic response that shows you're thinking about her problem, not just the ticket. That's the kind of support Portico values.",
-            incorrect: "There's something practical you can offer here. Suggest Rosa keep the Trajecsys records as documentation of compliance in the meantime -- those records exist and show the hours were logged. Then follow up as soon as Engineering resolves the sync. Don't leave her without options."
+            correct: "This is going above the technical fix. Rosa has a real compliance concern. Suggesting she use the Trajecsys records as backup documentation is practical and shows you're thinking about her actual problem, not just the ticket.",
+            incorrect: "There's something practical you can offer here. Suggest Rosa keep the Trajecsys records as documentation in the meantime -- then follow up as soon as Engineering resolves it."
           }
         }
       ]
@@ -1634,7 +1247,6 @@
   function nextStep() {
     const t = tickets[currentTicket];
     currentStep++;
-
     if (currentStep >= t.steps.length) {
       showScore();
     } else {
@@ -1663,7 +1275,6 @@
     document.getElementById('score-label').textContent = label;
   }
 
-  // INIT
   renderQueue();
 </script>
 </body>
