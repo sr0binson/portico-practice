@@ -200,29 +200,49 @@
   .interviewer-role { font-size: 13px; color: rgba(255,255,255,0.55); }
 
   .interview-card { background: var(--white); border-radius: 12px; padding: 20px 24px; margin-bottom: 12px; }
-  .interview-q { font-size: 15px; font-weight: 600; color: var(--navy); margin-bottom: 12px; line-height: 1.4; }
-  .interview-why { font-size: 12px; color: var(--gray-400); margin-bottom: 10px; font-style: italic; }
-  .reveal-btn {
-    background: none; border: 1px solid var(--gray-200); border-radius: 6px;
-    padding: 8px 14px; font-size: 13px; color: var(--gray-600); cursor: pointer;
-    font-family: 'DM Sans', sans-serif; transition: all 0.15s;
+  .interview-q { font-size: 15px; font-weight: 600; color: var(--navy); margin-bottom: 6px; line-height: 1.4; }
+  .interview-why { font-size: 12px; color: var(--gray-400); margin-bottom: 14px; font-style: italic; }
+
+  .answer-textarea {
+    width: 100%; min-height: 100px; border: 2px solid var(--gray-200); border-radius: 8px;
+    padding: 12px 14px; font-size: 14px; font-family: 'DM Sans', sans-serif; color: var(--navy);
+    line-height: 1.6; resize: vertical; transition: border-color 0.2s; background: var(--white);
   }
-  .reveal-btn:hover { border-color: var(--gold); color: var(--navy); }
-  .answer-box {
-    background: var(--gray-100); border-radius: 8px; padding: 14px 16px;
-    font-size: 14px; color: var(--gray-600); line-height: 1.6; margin-top: 10px;
-    border-left: 3px solid var(--gold); display: none;
+  .answer-textarea:focus { outline: none; border-color: var(--gold); }
+  .answer-textarea::placeholder { color: var(--gray-400); }
+
+  .submit-btn {
+    background: var(--navy); color: var(--white); border: none; border-radius: 8px;
+    padding: 10px 20px; font-size: 13px; font-weight: 600; cursor: pointer;
+    font-family: 'DM Sans', sans-serif; margin-top: 10px; transition: background 0.2s;
   }
-  .answer-box.open { display: block; }
-  .avoid-box {
-    background: var(--red-light); border-radius: 6px; padding: 10px 14px;
-    font-size: 13px; color: var(--red); margin-top: 8px; line-height: 1.5;
+  .submit-btn:hover { background: var(--blue); }
+  .submit-btn:disabled { opacity: 0.5; cursor: default; }
+
+  .rating-box {
+    margin-top: 14px; border-radius: 10px; padding: 16px 18px;
+    font-size: 14px; line-height: 1.6; display: none; border: 1px solid var(--gray-200);
+    background: var(--gray-100);
   }
+  .rating-box.visible { display: block; }
+  .rating-score {
+    font-size: 22px; font-weight: 700; color: var(--navy); margin-bottom: 8px;
+  }
+  .rating-score span { font-size: 13px; font-weight: 500; color: var(--gray-400); margin-left: 6px; }
+  .rating-body { font-size: 14px; color: var(--gray-600); line-height: 1.65; }
+  .rating-loading { color: var(--gray-400); font-style: italic; font-size: 13px; }
+
+  .score-dot {
+    display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 6px;
+  }
+  .dot-green { background: var(--green); }
+  .dot-yellow { background: var(--yellow); }
+  .dot-red { background: var(--red); }
 
   .wildcard-card { background: var(--white); border-radius: 12px; padding: 20px 24px; margin-bottom: 12px; }
   .wildcard-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--orange); margin-bottom: 6px; }
   .wildcard-q { font-size: 15px; font-weight: 600; color: var(--navy); margin-bottom: 10px; line-height: 1.4; }
-  .wildcard-tip { font-size: 13px; color: var(--gray-600); line-height: 1.5; }
+  .wildcard-context { font-size: 13px; color: var(--gray-400); font-style: italic; margin-bottom: 12px; line-height: 1.5; }
 
   .progress-bar-wrap { background: rgba(255,255,255,0.1); border-radius: 10px; height: 6px; margin-bottom: 24px; overflow: hidden; }
   .progress-bar-fill { background: var(--gold); height: 100%; border-radius: 10px; transition: width 0.4s ease; }
@@ -626,65 +646,68 @@
 <div class="tab-content" id="tab-interview">
   <div class="main">
     <div class="section-title">Interview Drill</div>
-    <div class="section-sub">Read the question. Think of your answer. Then reveal the suggested response and what to avoid.</div>
+    <div class="section-sub">Type your answer the way you'd actually say it. Submit and get rated on content, specificity, and fit for this role.</div>
+
+    <div class="info-box gold">
+      Each answer is rated by Claude based on the Portico job description, your background, and what strong answers look like in technical support and customer success roles. Be honest -- the more real your answer, the better the feedback.
+    </div>
 
     <div class="interview-section">
       <div class="interviewer-header">
         <div class="interviewer-avatar avatar-j">J</div>
         <div>
           <div class="interviewer-name">Joshua</div>
-          <div class="interviewer-role">Senior Support Analyst -- will ask about how you think through problems, not Portico knowledge you couldn't have yet</div>
+          <div class="interviewer-role">Senior Support Analyst -- focused on how you think through problems, not Portico knowledge you couldn't have yet</div>
         </div>
       </div>
 
       <div class="interview-card">
         <div class="interview-q">Walk me through how you approach a problem you've never seen before.</div>
-        <div class="interview-why">Why he asks: He wants to know your process. Not your Portico knowledge -- your instincts.</div>
-        <button class="reveal-btn" onclick="toggleAnswer(this)">Show suggested answer</button>
-        <div class="answer-box">I start by figuring out what I actually know vs. what I'm assuming. At Boise, when I hit a device issue I hadn't seen, I'd confirm the symptoms first -- what's happening, what's not happening, who else is affected. Then I'd work through the basics before I escalated: is it the device, the user, the network, the software? I document as I go so if it does go up to someone else, they're not starting from zero. I don't guess and I don't freeze -- I just keep narrowing it down.</div>
-        <div class="avoid-box" style="display:none">Avoid: Saying you'd Google it or just escalate right away. Show that you have a process before you hand it off.</div>
+        <div class="interview-why">Why he asks: He wants to know your process and instincts, not your Portico knowledge.</div>
+        <textarea class="answer-textarea" placeholder="Type your answer here..."></textarea>
+        <button class="submit-btn" onclick="rateAnswer(this, 'Walk me through how you approach a problem you have never seen before.', 'Joshua - Senior Support Analyst', 'He wants to know your diagnostic process and instincts. Strong answers name specific steps, show you stay calm, and demonstrate you document as you go. Avoid vague answers like I would Google it or just escalate.')">Submit for rating</button>
+        <div class="rating-box"></div>
       </div>
 
       <div class="interview-card">
         <div class="interview-q">Tell me about a time you had to figure something out with no documentation or training.</div>
-        <div class="interview-why">Why he asks: Portico is a newer merged platform. You will hit undocumented situations. He wants to know you won't freeze.</div>
-        <button class="reveal-btn" onclick="toggleAnswer(this)">Show suggested answer</button>
-        <div class="answer-box">When I built the support dashboard for my portfolio, I was working with the Airtable API and Make.com to build escalation logic from scratch -- there wasn't a guide for exactly what I was trying to do. I had to read the API docs, test small pieces, and work backward from the errors I got. That approach -- isolate the variable, test one thing at a time, read the error carefully -- is how I'd work through an unfamiliar support issue too.</div>
-        <div class="avoid-box" style="display:none">Avoid: A vague story. Name the actual thing you figured out and how you got there.</div>
+        <div class="interview-why">Why he asks: Portico is a recently merged platform. Undocumented situations will happen.</div>
+        <textarea class="answer-textarea" placeholder="Type your answer here..."></textarea>
+        <button class="submit-btn" onclick="rateAnswer(this, 'Tell me about a time you had to figure something out with no documentation or training.', 'Joshua - Senior Support Analyst', 'He wants a real specific example, not a vague story. Strong answers name what the thing was, how you broke it down, and what the outcome was. Stacy has relevant examples: building the Airtable API dashboard, the Chromebook recovery work at Boise, building Make.com automations without a guide.')">Submit for rating</button>
+        <div class="rating-box"></div>
       </div>
 
       <div class="interview-card">
         <div class="interview-q">What's the difference between a 401 error and a 500 error?</div>
-        <div class="interview-why">Why he asks: Basic technical competency check. This is general IT knowledge, not Portico-specific.</div>
-        <button class="reveal-btn" onclick="toggleAnswer(this)">Show suggested answer</button>
-        <div class="answer-box">A 401 is an authorization error -- the user doesn't have permission or their session expired. I'd start with logout and back in, then check their role and permissions. A 500 is a server-side error that's not caused by the user -- something broke on the backend. One person getting a 500 might be a fluke, but if multiple people are seeing it at the same time, that's a potential outage and I'd escalate to Engineering right away with as much detail as I have.</div>
-        <div class="avoid-box" style="display:none">Avoid: Saying both mean "something is broken." The distinction matters and he's testing whether you know it.</div>
+        <div class="interview-why">Why he asks: Basic technical competency check. General IT knowledge, not Portico-specific.</div>
+        <textarea class="answer-textarea" placeholder="Type your answer here..."></textarea>
+        <button class="submit-btn" onclick="rateAnswer(this, 'What is the difference between a 401 error and a 500 error?', 'Joshua - Senior Support Analyst', 'This is a technical knowledge check. 401 = authorization/permission issue, usually user-side. 500 = server-side error, not caused by the user. Strong answers explain both clearly and describe what action each one prompts at Tier 1 support.')">Submit for rating</button>
+        <div class="rating-box"></div>
       </div>
 
       <div class="interview-card">
         <div class="interview-q">How do you decide when to escalate vs. keep troubleshooting yourself?</div>
-        <div class="interview-why">Why he asks: He wants to know you won't over-escalate (creates noise) or under-escalate (drops the ball).</div>
-        <button class="reveal-btn" onclick="toggleAnswer(this)">Show suggested answer</button>
-        <div class="answer-box">I escalate when I've hit the edge of what I can actually see or fix. At Boise, my job was to confirm what I could verify -- is the device the problem, is it the user, is it the network -- and then hand it off clearly when it went beyond that. I wouldn't escalate something I could resolve with a permissions check or a browser refresh. But if I've done the basics and the problem is clearly in a system I don't have access to or authority over, I escalate fast with full notes so whoever picks it up doesn't have to start over.</div>
-        <div class="avoid-box" style="display:none">Avoid: "I'd always try to fix it myself first." That's not the right frame -- knowing your limits is part of the job.</div>
+        <div class="interview-why">Why he asks: He wants to know you won't over-escalate (noise) or under-escalate (dropped balls).</div>
+        <textarea class="answer-textarea" placeholder="Type your answer here..."></textarea>
+        <button class="submit-btn" onclick="rateAnswer(this, 'How do you decide when to escalate versus keep troubleshooting yourself?', 'Joshua - Senior Support Analyst', 'Strong answers show a clear mental model: escalate when you have hit the edge of what you can see or fix, not before. They also show you document before escalating so the next person does not start from zero. Avoid saying you always try to fix it yourself first -- knowing your limits is part of the job.')">Submit for rating</button>
+        <div class="rating-box"></div>
       </div>
 
       <div class="interview-card">
         <div class="interview-q">How do you handle a queue where two tickets are about to breach SLA and three others are waiting?</div>
         <div class="interview-why">Why he asks: Prioritization under pressure is a real daily skill in this role.</div>
-        <button class="reveal-btn" onclick="toggleAnswer(this)">Show suggested answer</button>
-        <div class="answer-box">The SLA-breaching ones go first, starting with whichever has the higher impact -- something affecting a student's enrollment or financial aid beats a reporting question. For those tickets, my first goal is acknowledgment and triage, not full resolution -- even a quick quality response to let the client know I'm on it buys time and keeps them calm. Then I'd work through the remaining three by urgency and complexity, and combine any that look like the same underlying issue.</div>
-        <div class="avoid-box" style="display:none">Avoid: "First in, first out." That's not how SLA-aware support works.</div>
+        <textarea class="answer-textarea" placeholder="Type your answer here..."></textarea>
+        <button class="submit-btn" onclick="rateAnswer(this, 'How do you handle a queue where two tickets are about to breach SLA and three others are waiting?', 'Joshua - Senior Support Analyst', 'Strong answers prioritize by SLA urgency AND impact (financial aid or enrollment issues beat reporting questions). They also show that acknowledgment comes before full resolution on urgent tickets -- even a quick update to the client buys time. Avoid first in first out as an answer.')">Submit for rating</button>
+        <div class="rating-box"></div>
       </div>
 
       <div class="interview-card">
         <div class="interview-q">How do you document a ticket you're handing off to Engineering?</div>
-        <div class="interview-why">Why he asks: Bad handoffs waste Engineering's time. He wants to know you write clean escalations.</div>
-        <button class="reveal-btn" onclick="toggleAnswer(this)">Show suggested answer</button>
-        <div class="answer-box">I'd include: the ticket ID, the school and user affected, the module, exactly what error they saw (word for word if possible), what I already tried, how many people are affected, and whether there's any time sensitivity -- like if it's tied to financial aid or an SLA that's close to breaching. I built a macro for this at Boise to make sure I didn't skip anything. The goal is that Engineering can pick it up without asking me a single follow-up question.</div>
-        <div class="avoid-box" style="display:none">Avoid: Vague handoffs like "user is having an issue with the system." That's not useful to anyone.</div>
+        <div class="interview-why">Why he asks: Bad handoffs waste Engineering's time and slow resolution.</div>
+        <textarea class="answer-textarea" placeholder="Type your answer here..."></textarea>
+        <button class="submit-btn" onclick="rateAnswer(this, 'How do you document a ticket you are handing off to Engineering?', 'Joshua - Senior Support Analyst', 'Strong answers include specific fields: ticket ID, school name, affected user(s), module, exact error message, steps already tried, number of affected users, SLA status, and any urgency flags like financial aid. Stacy has a real example: she built a macro at Boise to standardize this. Goal is Engineering can pick it up with zero follow-up questions.')">Submit for rating</button>
+        <div class="rating-box"></div>
       </div>
-
     </div>
 
     <hr class="divider">
@@ -694,48 +717,48 @@
         <div class="interviewer-avatar avatar-t">T</div>
         <div>
           <div class="interviewer-name">Tina</div>
-          <div class="interviewer-role">Customer Success Manager -- will test your communication, empathy, and client relationship skills</div>
+          <div class="interviewer-role">Customer Success Manager -- focused on communication, empathy, and client relationship skills</div>
         </div>
       </div>
 
       <div class="interview-card">
         <div class="interview-q">How do you communicate bad news to a client -- like when a fix is going to take longer than expected?</div>
         <div class="interview-why">Why she asks: She wants to know you won't go silent or overpromise.</div>
-        <button class="reveal-btn" onclick="toggleAnswer(this)">Show suggested answer</button>
-        <div class="answer-box">I'd reach out proactively -- before they have to follow up. I'd tell them what I know, what's still being worked on, and give a realistic timeframe if I have one. If I don't have a timeline yet, I'd say that clearly rather than guessing. I'd also tell them what I'm doing in the meantime and when to expect the next update. The goal is that they never wonder if their issue was forgotten.</div>
-        <div class="avoid-box" style="display:none">Avoid: "I'd escalate and let them know when it's fixed." That's passive. Tina wants to hear that you stay in contact yourself.</div>
+        <textarea class="answer-textarea" placeholder="Type your answer here..."></textarea>
+        <button class="submit-btn" onclick="rateAnswer(this, 'How do you communicate bad news to a client when a fix is going to take longer than expected?', 'Tina - Customer Success Manager', 'Strong answers are proactive: reach out before the client has to follow up. Include what you know, what is still being worked on, a realistic timeline if available, and when they will hear from you next. Avoid passive answers like escalate and update them when done -- Tina wants to hear that you own the communication yourself.')">Submit for rating</button>
+        <div class="rating-box"></div>
       </div>
 
       <div class="interview-card">
         <div class="interview-q">Tell me about a time you turned a frustrated customer into a satisfied one.</div>
-        <div class="interview-why">Why she asks: She wants empathy AND a real example.</div>
-        <button class="reveal-btn" onclick="toggleAnswer(this)">Show suggested answer</button>
-        <div class="answer-box">At Trader Joe's I was promoted to Mate within 6 weeks, which meant I was handling customer complaints on the floor every shift. There was a customer who came in upset about a product issue -- I didn't argue, I just listened first and made sure she felt heard before I did anything. Then I solved the actual problem quickly. She came back later that day to tell my captain I was the reason she'd keep shopping with us. Listening before fixing has carried into everything I've done since.</div>
-        <div class="avoid-box" style="display:none">Avoid: A vague story. Be specific and show it was your actions that changed the outcome.</div>
+        <div class="interview-why">Why she asks: She wants empathy AND a specific, real example.</div>
+        <textarea class="answer-textarea" placeholder="Type your answer here..."></textarea>
+        <button class="submit-btn" onclick="rateAnswer(this, 'Tell me about a time you turned a frustrated customer into a satisfied one.', 'Tina - Customer Success Manager', 'Strong answers are specific: name the situation, what the person was frustrated about, what you did (especially listening before fixing), and the outcome. Stacy has real examples from Trader Joe\'s and her IT internship. Vague answers like I always stay calm do not land -- show it with a story.')">Submit for rating</button>
+        <div class="rating-box"></div>
       </div>
 
       <div class="interview-card">
         <div class="interview-q">What do you know about Portico and why do you want to work here specifically?</div>
         <div class="interview-why">Why she asks: She's testing whether you did your homework and whether you're actually interested.</div>
-        <button class="reveal-btn" onclick="toggleAnswer(this)">Show suggested answer</button>
-        <div class="answer-box">Portico launched in May 2025 by merging four companies -- Verity IQ, Campus Ivy, CourseKey, and Trajecsys -- into one platform for career-focused schools. You serve over 300 institutions and 400,000 students in trade, nursing, allied health, and beauty programs. What stood out to me is that this isn't generic EdTech -- it's built for students trying to get into a career, not a four-year degree. That matters. I also built a platform simulator to study your modules before this interview. I want to work here because the work is real and the impact on students is direct.</div>
-        <div class="avoid-box" style="display:none">Avoid: "I saw it on LinkedIn and it seemed like a good fit." Show you researched them.</div>
+        <textarea class="answer-textarea" placeholder="Type your answer here..."></textarea>
+        <button class="submit-btn" onclick="rateAnswer(this, 'What do you know about Portico and why do you want to work here specifically?', 'Tina - Customer Success Manager', 'Strong answers show real research: Portico launched May 2025 from 4 merged companies (Verity IQ, Campus Ivy, CourseKey, Trajecsys), serves 300+ career-focused institutions, 400k+ students, CEO Doug Kaplan, backed by PSG Equity, tagline From here to career. Stacy also built a platform simulator -- that is a strong and genuine differentiator to mention. Avoid generic answers like I saw it on LinkedIn and it seemed like a good fit.')">Submit for rating</button>
+        <div class="rating-box"></div>
       </div>
 
       <div class="interview-card">
         <div class="interview-q">How do you handle a situation where a client is demanding something you can't actually give them?</div>
-        <div class="interview-why">Why she asks: This happens constantly in B2B SaaS support.</div>
-        <button class="reveal-btn" onclick="toggleAnswer(this)">Show suggested answer</button>
-        <div class="answer-box">I'd acknowledge what they're asking for and why it makes sense from their side. Then I'd be honest about what I can and can't do -- I wouldn't promise something just to end the conversation. If there's a workaround that gets them most of what they need, I'd offer that. If it's a feature request, I'd let them know I'll pass it to the Product team so it's on record. The goal is for them to feel like their ask was heard and taken seriously, even if the answer is no right now.</div>
-        <div class="avoid-box" style="display:none">Avoid: "I'd just escalate it." That's not managing the client relationship.</div>
+        <div class="interview-why">Why she asks: This comes up constantly in B2B SaaS support.</div>
+        <textarea class="answer-textarea" placeholder="Type your answer here..."></textarea>
+        <button class="submit-btn" onclick="rateAnswer(this, 'How do you handle a situation where a client is demanding something you cannot actually give them?', 'Tina - Customer Success Manager', 'Strong answers: acknowledge the ask and why it makes sense, be honest about what you can and cannot do, offer a workaround if one exists, and if it is a feature request flag it to Product so it is on record. The goal is that the client feels heard even when the answer is no. Avoid just escalate it -- that is not managing the relationship.')">Submit for rating</button>
+        <div class="rating-box"></div>
       </div>
 
       <div class="interview-card">
         <div class="interview-q">What do you think makes someone successful in a role like this?</div>
         <div class="interview-why">Why she asks: She's looking for self-awareness and cultural fit.</div>
-        <button class="reveal-btn" onclick="toggleAnswer(this)">Show suggested answer</button>
-        <div class="answer-box">Curiosity and follow-through. In a platform still being unified from four different systems, there's always something you don't know yet -- so you have to be willing to dig in and learn fast. But curiosity without follow-through just creates noise. The schools you support are dealing with real student outcomes, so they need someone who says "I'll get back to you by end of day" and actually does. I also think transparency matters -- being honest about what you don't know yet builds more trust than pretending.</div>
-        <div class="avoid-box" style="display:none">Avoid: "I'm a hard worker and fast learner." That's generic. Tie it to something specific about Portico.</div>
+        <textarea class="answer-textarea" placeholder="Type your answer here..."></textarea>
+        <button class="submit-btn" onclick="rateAnswer(this, 'What do you think makes someone successful in a Technical Support Specialist role at a SaaS company like Portico?', 'Tina - Customer Success Manager', 'Strong answers are specific to Portico, not generic. Portico is a newly merged platform from 4 companies -- there is always something you do not know yet, so curiosity matters. But curiosity without follow-through creates noise. Schools depend on the platform for real student outcomes. Transparency and honesty about what you do not know yet builds trust. Avoid generic hard worker and fast learner answers.')">Submit for rating</button>
+        <div class="rating-box"></div>
       </div>
     </div>
   </div>
@@ -745,52 +768,64 @@
 <div class="tab-content" id="tab-wildcard">
   <div class="main">
     <div class="section-title">Wildcard Prep</div>
-    <div class="section-sub">Unexpected things that might come up. Be ready for these.</div>
+    <div class="section-sub">Curveballs that might come up. Write out how you'd actually respond -- then get it rated.</div>
 
     <div class="info-box gold">
-      These are curveballs -- questions or moments that can catch you off guard if you haven't thought about them. Read each one and think through your answer before the interview.
+      These are the questions that catch people off guard. Practice writing your answer the way you would say it out loud. Submit for feedback on whether it would land in this specific interview.
     </div>
 
     <div class="wildcard-card">
       <div class="wildcard-label">Role Play</div>
       <div class="wildcard-q">"Let's do a quick role play. I'm a school administrator and I can't log in to the system. Go."</div>
-      <div class="wildcard-tip"><strong>How to handle it:</strong> Don't panic. Treat it like a real ticket. Start with: "Thanks for reaching out -- let's get this sorted. Can you tell me what error you're seeing when you try to log in?" Then work through it: 401 = permissions or session issue. No error = possibly wrong URL or browser issue. Account locked = check with their admin. Stay calm, be methodical, don't rush to a solution before you have the info.</div>
-    </div>
-
-    <div class="wildcard-card">
-      <div class="wildcard-label">Silence</div>
-      <div class="wildcard-q">"What questions do you have for us?" (and you go blank)</div>
-      <div class="wildcard-tip"><strong>Backup questions to always have ready:</strong> "What does a successful first 90 days look like in this role?" / "What's the most common type of ticket your team handles right now?" / "How does the support team collaborate with Engineering when something needs to be escalated?" / "How is Portico approaching the integration of the four platforms over the next year?" Any of these show you're thinking about the job, not just the offer.</div>
+      <div class="wildcard-context">Write out what you'd actually say to open the call and your first troubleshooting question.</div>
+      <textarea class="answer-textarea" placeholder="Type your response here..."></textarea>
+      <button class="submit-btn" onclick="rateAnswer(this, 'Role play: you are a school administrator who cannot log in to the Portico system. The candidate must respond as a support agent opening the interaction.', 'Live role play scenario', 'Strong response: stays calm, opens warmly but efficiently, asks what error they are seeing before jumping to solutions. Should NOT assume the cause before gathering info. 401 = permissions/session, no error = wrong URL or browser, locked = check admin. The first question is the most important thing to evaluate.')">Submit for rating</button>
+      <div class="rating-box"></div>
     </div>
 
     <div class="wildcard-card">
       <div class="wildcard-label">Weakness Question</div>
       <div class="wildcard-q">"What's a weakness you're actively working on?"</div>
-      <div class="wildcard-tip"><strong>How to handle it:</strong> Don't say "I work too hard" or "I'm a perfectionist." Be real. A strong answer: "I'm still building depth on enterprise SaaS platforms -- I've been studying Portico's platform specifically and built a simulator to practice, but I know there's a learning curve and I'm committed to getting up to speed fast." That turns a gap into evidence of your work ethic.</div>
+      <div class="wildcard-context">Be honest. Fake weaknesses (I work too hard) land badly. Real ones with evidence of effort land well.</div>
+      <textarea class="answer-textarea" placeholder="Type your answer here..."></textarea>
+      <button class="submit-btn" onclick="rateAnswer(this, 'What is a weakness you are actively working on?', 'Joshua or Tina', 'Strong answers name a real gap, show self-awareness, and then pivot to evidence of effort. For Stacy, a real gap is enterprise SaaS platform depth -- but she has built a simulator, studied the Portico knowledge base, and done significant prep. That turns the gap into a strength signal. Avoid I work too hard or I am a perfectionist.')">Submit for rating</button>
+      <div class="rating-box"></div>
     </div>
 
     <div class="wildcard-card">
       <div class="wildcard-label">Experience Gap</div>
       <div class="wildcard-q">"You don't have direct SaaS support experience. Why should we hire you?"</div>
-      <div class="wildcard-tip"><strong>How to handle it:</strong> Don't apologize for your resume. "My IT internship gave me real troubleshooting experience across 12 school sites and Zendesk. I built a platform simulator and studied your knowledge base to prepare for this role. I know I'm not coming in with years of SaaS experience, but I'm coming in with the instincts, the prep, and the drive -- and I don't think you'll find someone who's done more to get ready for this specific job."</div>
-    </div>
-
-    <div class="wildcard-card">
-      <div class="wildcard-label">Compensation</div>
-      <div class="wildcard-q">"Are you okay with the $58k salary range?"</div>
-      <div class="wildcard-tip"><strong>How to handle it:</strong> The listed salary is $58k. If you're comfortable with that, a simple "Yes, that works for me" is fine. If you want to negotiate later, now is not the time -- lock in the offer first. You can say: "I'm focused on finding the right role and company -- I'm confident we can make it work if there's a mutual fit."</div>
+      <div class="wildcard-context">Don't apologize for your resume. Make the case with what you actually have.</div>
+      <textarea class="answer-textarea" placeholder="Type your answer here..."></textarea>
+      <button class="submit-btn" onclick="rateAnswer(this, 'You do not have direct SaaS support experience. Why should we hire you?', 'Joshua or Tina', 'Strong answers do not apologize. They make the case with real evidence: IT internship with real troubleshooting at 12 school sites, Zendesk experience, Airtable API + Make.com portfolio work, the Portico platform simulator built specifically for this interview. The goal is to show that the gap in SaaS title does not mean a gap in preparation, instincts, or drive.')">Submit for rating</button>
+      <div class="rating-box"></div>
     </div>
 
     <div class="wildcard-card">
       <div class="wildcard-label">The Simulator</div>
-      <div class="wildcard-q">If they ask you to show your portfolio or walk them through your work</div>
-      <div class="wildcard-tip"><strong>How to handle it:</strong> Lead with the Portico platform simulator. Explain: "I built this to learn your modules before the interview -- it covers all seven modules including the student and admin views, ticket queue with SLA tracking, error codes, and canned responses." Then mention the support dashboard as a separate portfolio piece showing SLA tracking and escalation logic. That's a strong one-two showing both platform prep and independent building.</div>
+      <div class="wildcard-q">If they ask you to walk them through your portfolio or show your work</div>
+      <div class="wildcard-context">Write out what you'd say to kick off that walkthrough.</div>
+      <textarea class="answer-textarea" placeholder="Type your answer here..."></textarea>
+      <button class="submit-btn" onclick="rateAnswer(this, 'Walk me through your portfolio or the work you have done to prepare for this role.', 'Joshua or Tina', 'Strong answers lead with the Portico platform simulator -- explain what it is, why you built it, what it covers (all 7 modules, student and admin views, ticket queue with SLA tracking, error codes, canned responses). Then mention the Portico Support Dashboard as a separate portfolio piece showing SLA tracking and escalation logic built with Airtable API, Make.com, and Vercel serverless functions. That combination shows both company-specific prep and independent technical building.')">Submit for rating</button>
+      <div class="rating-box"></div>
     </div>
 
     <div class="wildcard-card">
       <div class="wildcard-label">Culture Fit</div>
       <div class="wildcard-q">"How would you describe your work style?"</div>
-      <div class="wildcard-tip"><strong>How to handle it:</strong> Tie it to Portico's culture. "I'm a self-starter -- I don't wait for someone to tell me what to learn. I built prep tools for this interview on my own. I'm also a team player: I know support doesn't work in isolation and I'd want to be useful to Engineering and Customer Success, not just the people filing tickets. And I'm customer-first -- at Trader Joe's that was the whole job, and I carried it into my IT work too."</div>
+      <div class="wildcard-context">Tie it to Portico specifically, not a generic answer. Portico values: roll-up-your-sleeves, transferable skills, team players who work across Product, Engineering, and CS.</div>
+      <textarea class="answer-textarea" placeholder="Type your answer here..."></textarea>
+      <button class="submit-btn" onclick="rateAnswer(this, 'How would you describe your work style?', 'Joshua or Tina', 'Strong answers connect to Portico culture: self-starter (built tools for this interview on her own), team player (support works with Engineering and CS, not just ticket filers), customer-first (Trader Joe\'s + IT internship). Avoid generic hard worker answers. The best answers are specific and tied to actual things Stacy has done.')">Submit for rating</button>
+      <div class="rating-box"></div>
+    </div>
+
+    <div class="wildcard-card">
+      <div class="wildcard-label">Silence</div>
+      <div class="wildcard-q">"What questions do you have for us?" (and you blank)</div>
+      <div class="wildcard-context">Write out 2-3 questions you'd actually ask. These should be genuine and show you're thinking about the job, not the offer.</div>
+      <textarea class="answer-textarea" placeholder="Write your questions here..."></textarea>
+      <button class="submit-btn" onclick="rateAnswer(this, 'What questions do you have for us? The candidate needs to ask thoughtful questions at the end of the interview.', 'Joshua or Tina', 'Strong questions show the candidate is thinking about the actual job, not just landing the offer. Good examples: what does a successful first 90 days look like, what is the most common type of ticket right now, how does support collaborate with Engineering on escalations, how is Portico approaching platform integration over the next year. Weak questions: what are the benefits, what are the hours, when will I hear back.')">Submit for rating</button>
+      <div class="rating-box"></div>
     </div>
 
   </div>
@@ -811,14 +846,83 @@
     chevron.classList.toggle('open');
   }
 
-  function toggleAnswer(btn) {
+  async function rateAnswer(btn, question, interviewer, rubric) {
     const card = btn.parentElement;
-    const answerBox = card.querySelector('.answer-box');
-    const avoidBox = card.querySelector('.avoid-box');
-    const isOpen = answerBox.classList.contains('open');
-    answerBox.classList.toggle('open');
-    if (avoidBox) avoidBox.style.display = isOpen ? 'none' : 'block';
-    btn.textContent = isOpen ? 'Show suggested answer' : 'Hide answer';
+    const textarea = card.querySelector('.answer-textarea');
+    const ratingBox = card.querySelector('.rating-box');
+    const answer = textarea.value.trim();
+
+    if (!answer || answer.length < 10) {
+      ratingBox.className = 'rating-box visible';
+      ratingBox.innerHTML = '<div class="rating-loading">Write something first, then submit.</div>';
+      return;
+    }
+
+    btn.disabled = true;
+    btn.textContent = 'Rating...';
+    ratingBox.className = 'rating-box visible';
+    ratingBox.innerHTML = '<div class="rating-loading">Sending to Claude for review...</div>';
+
+    const systemPrompt = `You are rating interview answers for Stacy Robinson, who is applying for a Technical Support Specialist role at Portico ($58k, remote). 
+
+Portico context: EdTech SaaS platform for 300+ career-focused schools (trade, nursing, allied health, beauty). Launched May 2025 from 4 merged companies: Verity IQ (CRM/SIS), Campus Ivy (Financial Aid), CourseKey (Attendance/Payments), Trajecsys (Clinical). Uses Freshdesk. CEO Doug Kaplan.
+
+Stacy's background: IT Support Intern at Boise School District (Zendesk, hardware troubleshooting, 12+ school sites, 2000+ Chromebook deployment). Former Trader Joe's Mate (team lead, customer service). Built: Portico platform simulator, Airtable API support dashboard with Make.com escalation logic, Make.com/Zapier/Claude API household automation. Pursuing CompTIA A+.
+
+Job requirements: 2+ years customer support, SaaS/enterprise preferred, ticketing systems (Zendesk/Freshdesk/Jira), problem-solving, communication, empathy. Preferred: API/integration knowledge, CRM/SIS familiarity, enterprise/B2B experience.
+
+Rate the answer on a scale of 1-10. Be direct and specific. Format your response EXACTLY like this:
+SCORE: [number]/10
+WHAT WORKS: [1-3 sentences on what landed well, be specific]
+WHAT TO IMPROVE: [1-3 sentences on what was weak, vague, or missing -- be honest]
+ONE THING TO ADD: [One specific thing she should include or change next time she practices this]
+
+Keep the whole response under 150 words. No fluff. No em dashes.`;
+
+    const userPrompt = `Interviewer: ${interviewer}
+Question: ${question}
+Rubric for this question: ${rubric}
+
+Stacy's answer: ${answer}`;
+
+    try {
+      const response = await fetch('https://api.anthropic.com/v1/messages', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          model: 'claude-sonnet-4-20250514',
+          max_tokens: 1000,
+          system: systemPrompt,
+          messages: [{ role: 'user', content: userPrompt }]
+        })
+      });
+
+      const data = await response.json();
+      const text = data.content?.[0]?.text || 'No response returned.';
+
+      const lines = text.split('\n').filter(l => l.trim());
+      let html = '';
+      for (const line of lines) {
+        if (line.startsWith('SCORE:')) {
+          const score = parseInt(line.replace('SCORE:', '').trim());
+          const dot = score >= 8 ? 'dot-green' : score >= 6 ? 'dot-yellow' : 'dot-red';
+          html += `<div class="rating-score"><span class="score-dot ${dot}"></span>${score}/10 <span>out of 10</span></div>`;
+        } else if (line.startsWith('WHAT WORKS:')) {
+          html += `<div class="rating-body" style="margin-bottom:10px"><strong>What works:</strong> ${line.replace('WHAT WORKS:', '').trim()}</div>`;
+        } else if (line.startsWith('WHAT TO IMPROVE:')) {
+          html += `<div class="rating-body" style="margin-bottom:10px"><strong>Improve:</strong> ${line.replace('WHAT TO IMPROVE:', '').trim()}</div>`;
+        } else if (line.startsWith('ONE THING TO ADD:')) {
+          html += `<div class="rating-body" style="border-left:3px solid var(--gold);padding-left:10px"><strong>Next time:</strong> ${line.replace('ONE THING TO ADD:', '').trim()}</div>`;
+        }
+      }
+
+      ratingBox.innerHTML = html || `<div class="rating-body">${text}</div>`;
+    } catch (err) {
+      ratingBox.innerHTML = '<div class="rating-body" style="color:var(--red)">Something went wrong. Check your connection and try again.</div>';
+    }
+
+    btn.disabled = false;
+    btn.textContent = 'Submit again';
   }
 
   const tickets = [
