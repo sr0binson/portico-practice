@@ -959,7 +959,8 @@ Stacy's answer: ${answer}`;
       });
 
       const data = await response.json();
-      const text = data.content?.[0]?.text || 'No response returned.';
+      console.log('API response:', JSON.stringify(data));
+      const text = data.content?.[0]?.text || data.error?.message || JSON.stringify(data);
 
       const lines = text.split('\n').filter(l => l.trim());
       let html = '';
